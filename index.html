@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT Math — Parallel Relationships in Space | Thầy Nguyễn Hữu Trung</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]});"></script>
+<style>
+  :root{--sat-blue:#1B3A6B;--sat-blue-light:#2C5AA0;--sat-blue-pale:#EAF0F9;--sat-green:#4CAF50;--sat-red:#E53935;--sat-yellow:#F5B400;--sat-bg:#F5F7FA;--sat-text:#1a2332;--sat-gray:#5b6778;--sat-gold:#F5B400;--shadow:0 2px 8px rgba(27,58,107,.08);--shadow-lg:0 6px 24px rgba(27,58,107,.14)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter','Segoe UI',Roboto,-apple-system,sans-serif;background:var(--sat-bg);color:var(--sat-text);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;padding:20px 32px;box-shadow:var(--shadow-lg);position:sticky;top:0;z-index:100}
+  .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand-logo{width:44px;height:44px;border-radius:10px;background:#fff;color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;letter-spacing:-1px}
+  .brand-title{font-size:20px;font-weight:700}
+  .brand-sub{font-size:12.5px;opacity:.85;font-weight:400}
+  .header-credit{font-size:12.5px;text-align:right;line-height:1.5;background:rgba(255,255,255,.12);padding:8px 16px;border-radius:10px;border-left:3px solid var(--sat-gold)}
+  .header-credit strong{color:var(--sat-gold);font-weight:800}
+  nav{background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:84px;z-index:99;overflow-x:auto}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;padding:0 16px;gap:4px}
+  .nav-btn{background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sat-gray);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+  .nav-btn:hover{color:var(--sat-blue);background:var(--sat-blue-pale)}
+  .nav-btn.active{color:var(--sat-blue);border-bottom-color:var(--sat-blue);background:var(--sat-blue-pale)}
+  main{max-width:1200px;margin:0 auto;padding:32px 20px 80px}
+  .section{display:none;animation:fade .35s ease}
+  .section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .page-title{font-size:28px;font-weight:800;color:var(--sat-blue);margin-bottom:6px}
+  .page-subtitle{color:var(--sat-gray);margin-bottom:28px;font-size:15px}
+  .card{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #eef2f8}
+  .card h3{font-size:20px;color:var(--sat-blue);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--sat-blue-pale);display:flex;align-items:center;gap:10px}
+  .card h3 .num{background:var(--sat-blue);color:#fff;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+  .card h4{font-size:16px;color:var(--sat-blue-light);margin:16px 0 8px}
+  .card p,.card li{margin-bottom:8px}
+  .card ul,.card ol{padding-left:24px}
+  .card ol li,.card ul li{margin-bottom:6px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:top}
+  th{background:var(--sat-blue-pale);color:var(--sat-blue);font-weight:700;font-size:13.5px;text-transform:uppercase;letter-spacing:.5px}
+  tr:hover td{background:#fafcff}
+  .formula-box{background:linear-gradient(135deg,#f0f5ff 0%,#e6efff 100%);border-left:4px solid var(--sat-blue);border-radius:10px;padding:14px 18px;margin:12px 0;font-size:15.5px}
+  .formula-box strong{color:var(--sat-blue);font-weight:800}
+  .vocab-search{width:100%;padding:12px 16px;border:2px solid #e2e8f0;border-radius:10px;font-family:inherit;font-size:15px;margin-bottom:16px}
+  .vocab-search:focus{outline:none;border-color:var(--sat-blue-light)}
+  .vocab-table td:nth-child(2){font-family:'Courier New',monospace;color:var(--sat-blue);font-weight:600}
+  .speak-btn{background:none;border:none;cursor:pointer;color:var(--sat-blue);padding:4px 8px;border-radius:6px;transition:background .2s;font-size:15px}
+  .speak-btn:hover{background:var(--sat-blue-pale)}
+  .group-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+  .group-tab{padding:12px 22px;border-radius:10px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--sat-gray);transition:all .2s}
+  .group-tab:hover{border-color:var(--sat-blue-light)}
+  .group-tab.active{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .group-tab .badge{display:inline-block;margin-left:6px;background:rgba(255,255,255,.25);padding:1px 8px;border-radius:8px;font-size:12px}
+  .group-tab:not(.active) .badge{background:var(--sat-blue-pale);color:var(--sat-blue)}
+  .group-panel{display:none}
+  .group-panel.active{display:block}
+  .q-card{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);margin-bottom:18px;border-left:5px solid var(--sat-blue-light);transition:border-color .3s}
+  .q-card.correct{border-left-color:var(--sat-green)}
+  .q-card.wrong{border-left-color:var(--sat-red)}
+  .q-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .q-num{background:var(--sat-blue);color:#fff;min-width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+  .q-card.correct .q-num{background:var(--sat-green)}
+  .q-card.wrong .q-num{background:var(--sat-red)}
+  .q-text{font-size:16px;font-weight:500;flex:1}
+  .options{display:grid;gap:10px;margin-top:16px}
+  .option{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border:2px solid #e2e8f0;border-radius:10px;background:#fff;cursor:pointer;transition:all .18s;font-family:inherit;font-size:15px;text-align:left;color:var(--sat-text);width:100%}
+  .option:hover:not(.disabled){border-color:var(--sat-blue-light);background:#fafcff;transform:translateX(2px)}
+  .option .letter{background:var(--sat-blue-pale);color:var(--sat-blue);width:28px;height:28px;border-radius:7px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+  .option.correct{border-color:var(--sat-green);background:#eaf7eb}
+  .option.correct .letter{background:var(--sat-green);color:#fff}
+  .option.wrong{border-color:var(--sat-red);background:#fdeaea}
+  .option.wrong .letter{background:var(--sat-red);color:#fff}
+  .option.disabled{cursor:default}
+  .option.disabled:hover{transform:none;background:inherit}
+  .option.selected{border-color:var(--sat-blue);background:#eaf0f9}
+  .option.selected .letter{background:var(--sat-blue);color:#fff}
+  .feedback{margin-top:14px;padding:14px 18px;border-radius:10px;font-size:14.5px;display:none;animation:slideIn .3s ease}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .feedback.show{display:block}
+  .feedback.ok{background:#eaf7eb;border-left:4px solid var(--sat-green);color:#1f6b24}
+  .feedback.no{background:#fdeaea;border-left:4px solid var(--sat-red);color:#8b1c1c}
+  .feedback strong{display:block;margin-bottom:6px;font-size:15px}
+  .feedback .review{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.12);font-size:13.5px;color:var(--sat-blue);font-weight:600}
+  .sat-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:24px;box-shadow:var(--shadow-lg)}
+  .sat-hero h2{font-size:24px;margin-bottom:8px;font-weight:800}
+  .sat-hero p{opacity:.9;font-size:14.5px;max-width:760px}
+  .sat-info-row{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .sat-info{background:rgba(255,255,255,.13);padding:10px 18px;border-radius:10px;font-size:13.5px}
+  .sat-info strong{font-size:17px;display:block;font-weight:800}
+  .btn{padding:11px 24px;border-radius:10px;border:none;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+  .btn-primary{background:var(--sat-blue);color:#fff}
+  .btn-primary:hover{background:var(--sat-blue-light);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
+  .btn-primary:disabled{background:#b8c4d6;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-outline{background:#fff;color:var(--sat-blue);border:2px solid var(--sat-blue)}
+  .btn-outline:hover{background:var(--sat-blue-pale)}
+  .btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
+  .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+  .home-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent}
+  .home-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light)}
+  .home-card .icon{font-size:32px;margin-bottom:10px}
+  .home-card h4{font-size:16px;color:var(--sat-blue);margin-bottom:6px}
+  .home-card p{font-size:13.5px;color:var(--sat-gray)}
+  .hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:36px 40px;margin-bottom:28px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(245,180,0,.12)}
+  .hero h1{font-size:30px;font-weight:800;margin-bottom:10px}
+  .hero p{opacity:.92;font-size:15.5px;max-width:760px;position:relative}
+  .hero-author{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:14px;font-size:13.5px;position:relative}
+  .hero-author .avatar{width:44px;height:44px;border-radius:50%;background:var(--sat-gold);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+  .hero-author strong{color:var(--sat-gold);font-weight:800;font-size:14.5px;display:block}
+  .hero-author span{opacity:.9}
+  footer{background:linear-gradient(135deg,#0f2547 0%,var(--sat-blue) 100%);color:#fff;padding:36px 32px 24px;margin-top:40px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+  .footer-col h4{color:var(--sat-gold);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:800}
+  .footer-col p,.footer-col li{font-size:13.5px;opacity:.88;line-height:1.8}
+  .footer-col ul{list-style:none}
+  .footer-col ul li{cursor:pointer;transition:color .2s}
+  .footer-col ul li:hover{color:var(--sat-gold)}
+  .footer-author-card{background:rgba(255,255,255,.08);border-left:4px solid var(--sat-gold);padding:16px 20px;border-radius:10px;margin-top:8px}
+  .footer-author-card .name{font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
+  .footer-author-card .role{font-size:13px;color:var(--sat-gold);font-weight:600;margin-bottom:8px}
+  .footer-author-card .phone{font-size:14px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:6px;background:rgba(245,180,0,.2);padding:6px 12px;border-radius:8px}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);text-align:center;font-size:12.5px;opacity:.75;line-height:1.8}
+  .footer-bottom strong{color:var(--sat-gold);font-weight:800}
+  .sat-set-selector{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-bottom:24px}
+  .set-card{background:#fff;border-radius:14px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:all .25s;border:2px solid transparent;border-top:5px solid var(--sat-blue);position:relative}
+  .set-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--sat-blue-light);border-top-color:var(--sat-gold)}
+  .set-card .set-badge{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);padding:4px 12px;border-radius:8px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:10px}
+  .set-card h4{font-size:18px;color:var(--sat-blue);margin-bottom:8px}
+  .set-card p{font-size:13.5px;color:var(--sat-gray);margin-bottom:14px;min-height:52px}
+  .set-card .set-meta{display:flex;gap:14px;font-size:12.5px;color:var(--sat-gray);border-top:1px dashed #e2e8f0;padding-top:12px;flex-wrap:wrap}
+  .set-card .set-meta strong{color:var(--sat-blue);font-weight:800}
+  .set-card .set-start{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:800;color:var(--sat-blue);font-size:14px}
+  .test-topbar{background:#fff;border-radius:14px;padding:16px 22px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px;border:1px solid #eef2f8;position:sticky;top:140px;z-index:50}
+  .test-set-name{font-size:16px;font-weight:800;color:var(--sat-blue)}
+  .test-progress{font-size:13px;color:var(--sat-gray);margin-top:2px}
+  .timer-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .timer{font-family:'Courier New',monospace;font-size:24px;font-weight:800;background:var(--sat-blue);color:#fff;padding:8px 18px;border-radius:10px;letter-spacing:2px;min-width:110px;text-align:center;transition:background .3s}
+  .timer.warning{background:var(--sat-yellow);animation:pulse .8s infinite}
+  .timer.danger{background:var(--sat-red);animation:pulse .5s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .test-layout{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+  .test-sidebar{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);border:1px solid #eef2f8;position:sticky;top:220px}
+  .test-sidebar h4{font-size:12.5px;color:var(--sat-blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--sat-blue-pale)}
+  .nav-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .nav-cell{aspect-ratio:1;border-radius:8px;border:2px solid #e2e8f0;background:#fff;font-family:inherit;font-weight:700;font-size:12.5px;color:var(--sat-gray);cursor:pointer;transition:all .15s;display:flex;align-items:center;justify-content:center;padding:0}
+  .nav-cell:hover{border-color:var(--sat-blue-light)}
+  .nav-cell.answered{background:var(--sat-blue);color:#fff;border-color:var(--sat-blue)}
+  .nav-cell.current{border-color:var(--sat-gold);box-shadow:0 0 0 3px rgba(245,180,0,.3)}
+  .nav-legend{margin-top:14px;font-size:12px;color:var(--sat-gray);display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px dashed #e2e8f0}
+  .nav-legend > div{display:flex;align-items:center;gap:8px}
+  .legend-box{width:14px;height:14px;border-radius:4px;border:2px solid #e2e8f0;background:#fff;display:inline-block}
+  .legend-box.answered{background:var(--sat-blue);border-color:var(--sat-blue)}
+  .legend-box.current{border-color:var(--sat-gold);box-shadow:0 0 0 2px rgba(245,180,0,.3)}
+  .test-main{min-width:0}
+  .test-main .q-card{margin-bottom:14px}
+  .test-nav-btns{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .test-nav-btns .btn{min-width:140px}
+  .result-hero{background:linear-gradient(135deg,var(--sat-blue) 0%,var(--sat-blue-light) 100%);color:#fff;border-radius:16px;padding:32px 36px;margin-bottom:22px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+  .result-hero h2{font-size:22px;margin-bottom:6px}
+  .result-hero p{opacity:.9;font-size:14px}
+  .result-score{text-align:center;background:rgba(255,255,255,.14);padding:18px 30px;border-radius:14px;border:2px solid rgba(245,180,0,.5)}
+  .result-score .num{font-size:42px;font-weight:800;color:var(--sat-gold);line-height:1}
+  .result-score .den{font-size:16px;opacity:.85;margin-top:4px}
+  .result-score .pct{font-size:14px;font-weight:700;margin-top:8px;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;display:inline-block}
+  .level-banner{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);border-left:6px solid var(--sat-blue);display:flex;gap:20px;align-items:flex-start;margin-bottom:22px}
+  .level-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:34px;flex-shrink:0;color:#fff}
+  .level-content{flex:1;min-width:0}
+  .level-content h3{font-size:22px;margin-bottom:8px;font-weight:800}
+  .level-content p{font-size:14.5px;color:var(--sat-text);margin-bottom:6px;line-height:1.65}
+  .level-content .level-advice{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;margin-top:10px;font-size:14px;border-left:3px solid var(--sat-blue);line-height:1.65}
+  .result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+  .stat-box{background:#fff;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);border-left:4px solid var(--sat-blue)}
+  .stat-box.green{border-left-color:var(--sat-green)}
+  .stat-box.red{border-left-color:var(--sat-red)}
+  .stat-box.yellow{border-left-color:var(--sat-yellow)}
+  .stat-box .label{font-size:11.5px;color:var(--sat-gray);text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .stat-box .value{font-size:26px;font-weight:800;color:var(--sat-blue);margin-top:4px;line-height:1.1}
+  .stat-box.green .value{color:var(--sat-green)}
+  .stat-box.red .value{color:var(--sat-red)}
+  .stat-box.yellow .value{color:#b8860b}
+  .stat-box .sub{font-size:12.5px;color:var(--sat-gray);margin-top:4px}
+  .result-section-title{font-size:18px;font-weight:800;color:var(--sat-blue);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+  .result-section-title .icon{background:var(--sat-blue-pale);color:var(--sat-blue);width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .time-analysis{background:#fff;border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);margin-bottom:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;border:1px solid #eef2f8}
+  .time-block{display:flex;gap:14px;align-items:flex-start}
+  .time-block .tb-icon{width:46px;height:46px;border-radius:11px;background:var(--sat-blue-pale);color:var(--sat-blue);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+  .time-block .tb-content{flex:1;min-width:0}
+  .time-block .tb-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .time-block .tb-value{font-size:22px;font-weight:800;color:var(--sat-blue);line-height:1.1}
+  .time-block .tb-desc{font-size:12.5px;color:var(--sat-gray);margin-top:4px;line-height:1.5}
+  .topic-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .topic-table th,.topic-table td{padding:12px 16px;text-align:left;border-bottom:1px solid #eef2f8;vertical-align:middle}
+  .topic-table th{background:var(--sat-blue-pale);color:var(--sat-blue);font-size:12px;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+  .topic-table tr:last-child td{border-bottom:none}
+  .topic-bar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;min-width:100px;flex:1}
+  .topic-bar-cell{display:flex;align-items:center;gap:10px}
+  .topic-bar-fill{height:100%;background:var(--sat-green);transition:width .8s ease;border-radius:5px}
+  .topic-bar-fill.warn{background:var(--sat-yellow)}
+  .topic-bar-fill.bad{background:var(--sat-red)}
+  .topic-score{font-weight:800;color:var(--sat-blue);min-width:44px;text-align:right}
+  .topic-recommend{font-size:12.5px;color:var(--sat-gray);margin-top:6px;padding:8px 12px;background:#fafcff;border-radius:6px;border-left:2px solid var(--sat-blue-light);line-height:1.5;font-style:italic}
+  .roadmap{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);border-left:6px solid var(--sat-gold);margin-bottom:22px}
+  .roadmap h3{font-size:19px;color:var(--sat-blue);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .roadmap .roadmap-sub{font-size:13.5px;color:var(--sat-gray);margin-bottom:18px;line-height:1.6}
+  .roadmap-phase{padding:18px 0;border-bottom:1px dashed #e2e8f0;display:flex;gap:18px;align-items:flex-start}
+  .roadmap-phase:last-child{border-bottom:none;padding-bottom:0}
+  .roadmap-phase .phase-num{width:48px;height:48px;border-radius:12px;background:var(--sat-blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0}
+  .roadmap-phase.phase-1 .phase-num{background:var(--sat-red)}
+  .roadmap-phase.phase-2 .phase-num{background:#E8A317}
+  .roadmap-phase.phase-3 .phase-num{background:var(--sat-green)}
+  .roadmap-phase .phase-content{flex:1;min-width:0}
+  .roadmap-phase h4{font-size:15.5px;color:var(--sat-blue);margin-bottom:8px;font-weight:800;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .roadmap-phase .phase-time{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:6px}
+  .roadmap-phase ul{padding-left:22px;margin-top:6px}
+  .roadmap-phase li{font-size:13.5px;margin-bottom:6px;color:var(--sat-text);line-height:1.6}
+  .roadmap-phase .phase-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+  .wrong-item{background:#fff;border-radius:12px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px;border-left:5px solid var(--sat-red)}
+  .wrong-item.unanswered{border-left-color:var(--sat-gray)}
+  .wrong-item .wrong-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+  .wrong-item .wrong-num{background:var(--sat-red);color:#fff;min-width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+  .wrong-item.unanswered .wrong-num{background:var(--sat-gray)}
+  .wrong-item .wrong-q{font-size:15px;font-weight:600;flex:1;line-height:1.55}
+  .wrong-item .topic-tag{display:inline-block;background:var(--sat-blue-pale);color:var(--sat-blue);font-size:11.5px;padding:2px 10px;border-radius:6px;font-weight:700;margin-top:6px}
+  .wrong-item .ans-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;font-size:14px}
+  .wrong-item .ans-box{padding:10px 14px;border-radius:8px;background:#f5f7fa;border-left:3px solid var(--sat-gray)}
+  .wrong-item .ans-box.your{background:#fdeaea;border-left-color:var(--sat-red)}
+  .wrong-item .ans-box.correct{background:#eaf7eb;border-left-color:var(--sat-green)}
+  .wrong-item .ans-box .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--sat-gray);font-weight:700;margin-bottom:4px}
+  .wrong-item .ans-box .val{font-weight:600;color:var(--sat-text)}
+  .wrong-item .exp-box{background:var(--sat-blue-pale);padding:12px 16px;border-radius:8px;font-size:14px;border-left:3px solid var(--sat-blue);margin-top:10px;line-height:1.7}
+  .wrong-item .exp-box .lbl{font-weight:800;color:var(--sat-blue);margin-bottom:4px;font-size:13px}
+  .wrong-item .review-box{margin-top:10px;font-size:13.5px;color:var(--sat-blue);font-weight:600;padding:10px 14px;background:#fafcff;border-radius:8px;border:1px dashed var(--sat-blue-light)}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:900px){.test-layout{grid-template-columns:1fr}.test-sidebar{position:static}.nav-grid{grid-template-columns:repeat(10,1fr)}.result-hero{grid-template-columns:1fr}}
+  @media(max-width:640px){header{padding:14px 16px}.brand-title{font-size:16px}.header-credit{font-size:11.5px;padding:6px 12px;text-align:left}.nav-btn{padding:14px 12px;font-size:13px}main{padding:20px 12px 60px}.card{padding:20px 18px}.sat-hero{padding:24px 20px}.timer{font-size:20px;padding:6px 14px;min-width:90px}.hero{padding:26px 22px}.hero h1{font-size:22px}.page-title{font-size:22px}.footer-inner{grid-template-columns:1fr;gap:24px}footer{padding:28px 18px 20px}.nav-grid{grid-template-columns:repeat(6,1fr)}.wrong-item .ans-row{grid-template-columns:1fr}.result-score .num{font-size:34px}.test-topbar{position:static}.test-sidebar{position:static}.level-banner{flex-direction:column;gap:14px;padding:18px}.level-icon{width:52px;height:52px;font-size:28px}.level-content h3{font-size:18px}.roadmap{padding:20px 18px}.roadmap-phase{flex-direction:column;gap:12px}.time-analysis{padding:18px;grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">SAT</div>
+      <div><div class="brand-title">SAT Math Prep</div><div class="brand-sub">Parallel Relationships &amp; Pure Solid Geometry</div></div>
+    </div>
+    <div class="header-credit">Thiết kế bởi <strong>Thầy Nguyễn Hữu Trung</strong><br>THPT Trần Phú • ☎ 0964 848 989</div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="home">🏠 Trang chủ</button>
+    <button class="nav-btn" data-tab="knowledge">📐 Kiến thức</button>
+    <button class="nav-btn" data-tab="vocab">📚 Từ vựng</button>
+    <button class="nav-btn" data-tab="practice">✏️ Luyện tập</button>
+    <button class="nav-btn" data-tab="sat">⏱️ SAT Simulation</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Chinh phục SAT Math: Parallel Relationships in Space</h1>
+    <p>Khóa ôn tập chuyên sâu chủ đề <strong>Quan hệ song song — Hình học không gian thuần túy</strong> dành cho học sinh lớp 12 chuẩn bị kỳ thi <strong>Digital SAT</strong>. Nội dung song ngữ Việt–Anh, 40 từ vựng có phiên âm IPA, 30 câu luyện tập tức thì và <strong>3 bộ SAT Simulation × 30 câu = 90 câu</strong> với đồng hồ, tổng kết điểm và lộ trình ôn tập cá nhân hóa.</p>
+    <div class="hero-author"><div class="avatar">NT</div><div><strong>Thầy Nguyễn Hữu Trung</strong><span>Giáo viên Toán — THPT Trần Phú • ☎ 0964 848 989</span></div></div>
+  </div>
+  <div class="home-grid">
+    <div class="home-card" onclick="switchTab('knowledge')"><div class="icon">📐</div><h4>1. Kiến thức cơ bản</h4><p>6 mục lý thuyết song ngữ: song song của đường &amp; mặt, hai mặt phẳng song song, định lý Thales, phép chiếu song song, hình lăng trụ &amp; hình hộp.</p></div>
+    <div class="home-card" onclick="switchTab('vocab')"><div class="icon">📚</div><h4>2. Từ vựng chuyên ngành</h4><p>40 từ khóa SAT Math về quan hệ song song kèm phiên âm IPA, nghĩa tiếng Việt, ví dụ minh họa và phát âm tự động.</p></div>
+    <div class="home-card" onclick="switchTab('practice')"><div class="icon">✏️</div><h4>3. Luyện tập 3 nhóm</h4><p>30 câu trắc nghiệm tiếng Anh chia 3 mức độ: Cơ bản — Trung bình — Nâng cao. Chấm điểm ngay, gợi ý ôn lại lý thuyết.</p></div>
+    <div class="home-card" onclick="switchTab('sat')"><div class="icon">⏱️</div><h4>4. SAT Simulation — 3 bộ × 30 câu</h4><p>Mô phỏng Digital SAT Math với 90 câu hỏi tuyển chọn, đồng hồ 45 phút/bộ, thanh điều hướng và phân tích chi tiết sau khi nộp bài.</p></div>
+  </div>
+</section>
+
+<section id="knowledge" class="section">
+  <h2 class="page-title">📐 Kiến thức cơ bản cần nắm vững</h2>
+  <p class="page-subtitle">Song ngữ Việt — Anh · Dành cho học sinh lớp 12 chuẩn bị thi SAT Digital</p>
+
+  <div class="card">
+    <h3><span class="num">I</span> Vị trí tương đối — Đường thẳng song song (Parallel Lines)</h3>
+    <p><strong>Định nghĩa:</strong> Hai đường thẳng gọi là <em>song song</em> nếu chúng đồng phẳng và không có điểm chung. Ký hiệu: \(a \parallel b\).</p>
+    <p><em>Two lines are parallel if they are coplanar and have no common point. Notation: \(a \parallel b\).</em></p>
+    <table>
+      <tr><th>Vị trí (Position)</th><th>Đặc điểm (Feature)</th></tr>
+      <tr><td>Trùng nhau (Coincident)</td><td>Có vô số điểm chung</td></tr>
+      <tr><td>Cắt nhau (Intersecting)</td><td>Có đúng 1 điểm chung, đồng phẳng</td></tr>
+      <tr><td>Song song (Parallel)</td><td>Không có điểm chung, đồng phẳng</td></tr>
+      <tr><td>Chéo nhau (Skew)</td><td>Không có điểm chung, không đồng phẳng</td></tr>
+    </table>
+    <div class="formula-box">
+      <strong>Định lý 1:</strong> Hai đường thẳng phân biệt cùng song song với một đường thẳng thứ ba thì song song với nhau.<br>
+      <em>Two distinct lines parallel to a third line are parallel to each other.</em>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">II</span> Đường thẳng song song với mặt phẳng</h3>
+    <p><strong>Định nghĩa:</strong> Đường thẳng \(d\) song song mặt phẳng \((P)\) nếu chúng không có điểm chung. Ký hiệu: \(d \parallel (P)\).</p>
+    <div class="formula-box">
+      <strong>Định lý (dấu hiệu):</strong> Nếu \(d \not\subset (P)\) và \(d \parallel a\) với \(a \subset (P)\), thì \(d \parallel (P)\).<br>
+      <em>If a line outside a plane is parallel to some line in that plane, then it is parallel to the plane.</em>
+    </div>
+    <div class="formula-box">
+      <strong>Định lý (hệ quả):</strong> Nếu \(d \parallel (P)\) và \((Q)\) chứa \(d\), \((Q) \cap (P) = a\), thì \(d \parallel a\).<br>
+      <em>If a line is parallel to a plane, then any plane through the line intersects the given plane in a line parallel to it.</em>
+    </div>
+    <h4>Hệ quả quan trọng (Important consequences):</h4>
+    <ul>
+      <li>Nếu \(d \parallel (P)\) và \(a \subset (P)\), \(a \parallel d\) thì \(a\) xác định duy nhất.</li>
+      <li>Qua \(A \notin (P)\), có vô số đường thẳng song song với \((P)\) — chúng nằm trong mặt phẳng qua \(A\) và song song với \((P)\).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">III</span> Hai mặt phẳng song song (Parallel Planes)</h3>
+    <p><strong>Định nghĩa:</strong> Hai mặt phẳng gọi là song song nếu chúng không có điểm chung. Ký hiệu: \((P) \parallel (Q)\).</p>
+    <div class="formula-box">
+      <strong>Định lý (dấu hiệu):</strong> Nếu \((P)\) chứa hai đường thẳng cắt nhau \(a, b\) và \(a \parallel (Q), b \parallel (Q)\) thì \((P) \parallel (Q)\).<br>
+      <em>If a plane contains two intersecting lines both parallel to another plane, then the two planes are parallel.</em>
+    </div>
+    <div class="formula-box">
+      <strong>Định lý (giao tuyến song song):</strong> Nếu \((P) \parallel (Q)\) và \((R)\) cắt \((P)\) theo \(a\), cắt \((Q)\) theo \(b\), thì \(a \parallel b\).<br>
+      <em>If two parallel planes are cut by a third plane, the two intersection lines are parallel.</em>
+    </div>
+    <div class="formula-box">
+      <strong>Định lý Thales trong không gian:</strong> Ba mặt phẳng đôi một song song chắn trên hai cát tuyến bất kỳ những đoạn thẳng tỉ lệ.<br>
+      <em>Three parallel planes cut any two transversals in proportional segments.</em>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">IV</span> Phép chiếu song song (Parallel Projection)</h3>
+    <p><strong>Định nghĩa:</strong> Cho mặt phẳng \((P)\) và đường thẳng \(l\) cắt \((P)\). Phép chiếu song song theo phương \(l\) lên \((P)\) biến mỗi điểm \(M\) thành \(M'\) sao cho \(MM' \parallel l\).</p>
+    <h4>Tính chất (Properties):</h4>
+    <ul>
+      <li>Biến đường thẳng thành đường thẳng (hoặc điểm nếu song song phương chiếu).</li>
+      <li>Biến đoạn thẳng thành đoạn thẳng, bảo toàn tỉ số các đoạn thẳng song song.</li>
+      <li>Ba điểm thẳng hàng → ảnh của chúng thẳng hàng.</li>
+      <li>Hình bình hành → hình bình hành (khi không suy biến).</li>
+    </ul>
+    <div class="formula-box">
+      <strong>Ứng dụng:</strong> Vẽ hình biểu diễn của hình không gian, chứng minh song song, tính tỉ lệ đoạn thẳng.
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">V</span> Hình lăng trụ và hình hộp (Prisms &amp; Parallelepipeds)</h3>
+    <p><strong>Hình lăng trụ:</strong> Đa diện có hai đáy là hai đa giác song song và bằng nhau, các mặt bên là hình bình hành.</p>
+    <p><em>A prism is a polyhedron with two congruent parallel polygon bases and parallelogram lateral faces.</em></p>
+    <table>
+      <tr><th>Tính chất (Property)</th><th>Diễn giải (Meaning)</th></tr>
+      <tr><td>Các cạnh bên song song và bằng nhau</td><td>Lateral edges are parallel and equal</td></tr>
+      <tr><td>Hai đáy song song và bằng nhau</td><td>Bases are parallel and congruent</td></tr>
+      <tr><td>Các mặt bên là hình bình hành</td><td>Lateral faces are parallelograms</td></tr>
+    </table>
+    <h4>Hình hộp chữ nhật \(a\times b\times c\):</h4>
+    <div class="formula-box">
+      <strong>Thể tích:</strong> \(V = abc\)<br>
+      <strong>Diện tích toàn phần:</strong> \(S = 2(ab+bc+ca)\)<br>
+      <strong>Diện tích xung quanh:</strong> \(S_{xq} = 2(a+b)c\)<br>
+      <strong>Đường chéo không gian:</strong> \(d = \sqrt{a^2+b^2+c^2}\)
+    </div>
+    <h4>Hình lập phương cạnh \(a\):</h4>
+    <div class="formula-box">
+      <strong>Thể tích:</strong> \(V = a^3\) · <strong>Diện tích toàn phần:</strong> \(S = 6a^2\) · <strong>Đường chéo:</strong> \(d = a\sqrt{3}\)
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="num">VI</span> Ghi chú SAT Digital Math</h3>
+    <ul>
+      <li><strong>Cấu trúc:</strong> Reading &amp; Writing (64 phút / 54 câu) và Math (70 phút / 44 câu).</li>
+      <li>Chủ đề hình học không gian thuộc <strong>Geometry &amp; Trigonometry</strong> (~15% câu) và <strong>Problem Solving &amp; Data Analysis</strong>.</li>
+      <li>Được phép dùng máy tính — tận dụng cho căn thức và lượng giác.</li>
+      <li>Mẹo: vẽ hình ngay, đánh dấu các yếu tố song song, sử dụng tính chất bắc cầu và định lý Thales để suy luận nhanh.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="vocab" class="section">
+  <h2 class="page-title">📚 Hệ thống từ vựng SAT Math</h2>
+  <p class="page-subtitle">40 từ khóa chuyên ngành kèm phiên âm IPA — Nhấn 🔊 để nghe phát âm</p>
+  <div class="card">
+    <input type="text" id="vocabSearch" class="vocab-search" placeholder="🔍 Tìm kiếm từ vựng (tiếng Anh hoặc tiếng Việt)...">
+    <div style="overflow-x:auto">
+      <table class="vocab-table" id="vocabTable">
+        <thead><tr><th>#</th><th>English</th><th>Phiên âm (IPA)</th><th>Nghĩa</th><th>Ví dụ</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <h2 class="page-title">✏️ Luyện tập trắc nghiệm</h2>
+  <p class="page-subtitle">30 câu hỏi tiếng Anh · Chấm điểm ngay · Gợi ý ôn lại lý thuyết nếu sai</p>
+  <div class="group-tabs">
+    <button class="group-tab active" data-group="1">🟢 Nhóm 1 — Cơ bản <span class="badge">10</span></button>
+    <button class="group-tab" data-group="2">🟡 Nhóm 2 — Trung bình <span class="badge">10</span></button>
+    <button class="group-tab" data-group="3">🔴 Nhóm 3 — Nâng cao <span class="badge">10</span></button>
+  </div>
+  <div class="group-panel active" id="panel-1"></div>
+  <div class="group-panel" id="panel-2"></div>
+  <div class="group-panel" id="panel-3"></div>
+</section>
+
+<section id="sat" class="section">
+  <h2 class="page-title">⏱️ SAT Digital Simulation</h2>
+  <p class="page-subtitle">3 bộ đề × 30 câu — Mô phỏng cấu trúc Digital SAT Math · Đồng hồ 45 phút · Tổng kết &amp; phân tích chi tiết</p>
+
+  <div class="sat-hero">
+    <h2>📘 Digital SAT Math — Parallel Relationships in Space</h2>
+    <p>Mỗi bộ gồm <strong>30 câu hỏi tuyển chọn</strong>, thời gian <strong>45 phút</strong> (90 giây/câu). Sau khi nộp bài, bạn sẽ nhận <strong>bảng tổng kết điểm</strong>, <strong>đánh giá năng lực</strong>, <strong>lộ trình ôn tập cá nhân hóa</strong> và <strong>phân tích chi tiết từng câu sai</strong>.</p>
+    <div class="sat-info-row">
+      <div class="sat-info"><strong>90</strong>Câu hỏi (3 bộ)</div>
+      <div class="sat-info"><strong>45:00</strong>Mỗi bộ</div>
+      <div class="sat-info"><strong>Calculator</strong>Allowed</div>
+      <div class="sat-info"><strong>A–D</strong>4 lựa chọn</div>
+    </div>
+  </div>
+
+  <div id="satSetSelector" class="sat-set-selector"></div>
+
+  <div id="satTestScreen" style="display:none">
+    <div class="test-topbar">
+      <div>
+        <div class="test-set-name" id="testSetName">Bộ 1</div>
+        <div class="test-progress" id="testProgress">Câu 1 / 30 · Đã trả lời 0/30</div>
+      </div>
+      <div class="timer-wrap">
+        <div class="timer" id="testTimer">45:00</div>
+        <button class="btn btn-primary" id="btnSubmitTest">📝 Nộp bài</button>
+        <button class="btn btn-outline" id="btnQuitTest">✕ Thoát</button>
+      </div>
+    </div>
+    <div class="test-layout">
+      <aside class="test-sidebar">
+        <h4>Bảng câu hỏi</h4>
+        <div class="nav-grid" id="navGrid"></div>
+        <div class="nav-legend">
+          <div><span class="legend-box current"></span> Câu đang xem</div>
+          <div><span class="legend-box answered"></span> Đã trả lời</div>
+          <div><span class="legend-box"></span> Chưa trả lời</div>
+        </div>
+      </aside>
+      <div class="test-main">
+        <div class="q-card" id="testQuestionCard">
+          <div class="q-head"><div class="q-num" id="testQNum">1</div><div class="q-text" id="testQText"></div></div>
+          <div class="options" id="testOptions"></div>
+        </div>
+        <div class="test-nav-btns">
+          <button class="btn btn-outline" id="btnPrev">← Câu trước</button>
+          <button class="btn btn-primary" id="btnNext">Câu tiếp →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="satResultScreen" style="display:none"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>📘 Về khóa học</h4>
+      <p>Web ôn thi SAT Math chuyên đề <strong>Parallel Relationships — Pure Solid Geometry</strong> (Quan hệ song song và hình học không gian thuần túy). Nội dung song ngữ Việt–Anh, phù hợp học sinh lớp 12 chuẩn bị kỳ thi Digital SAT.</p>
+      <div class="footer-author-card"><div class="name">👨‍🏫 Thầy Nguyễn Hữu Trung</div><div class="role">Giáo viên Toán — THPT Trần Phú</div><div class="phone">📞 0964 848 989</div></div>
+    </div>
+    <div class="footer-col">
+      <h4>🧭 Điều hướng</h4>
+      <ul>
+        <li onclick="switchTab('home')">🏠 Trang chủ</li>
+        <li onclick="switchTab('knowledge')">📐 Kiến thức cơ bản</li>
+        <li onclick="switchTab('vocab')">📚 Từ vựng SAT Math</li>
+        <li onclick="switchTab('practice')">✏️ Luyện tập 3 nhóm</li>
+        <li onclick="switchTab('sat')">⏱️ SAT Simulation</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>📞 Liên hệ</h4>
+      <ul>
+        <li>👤 <strong>Thầy Nguyễn Hữu Trung</strong></li>
+        <li>🏫 THPT Trần Phú</li>
+        <li>☎️ 0964 848 989</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <strong>Thầy Nguyễn Hữu Trung — THPT Trần Phú</strong> · Thiết kế web ôn thi SAT Math chuyên đề Parallel Relationships &amp; Pure Solid Geometry</p>
+    <p style="margin-top:6px">Made with ❤️ for Grade 12 students preparing for the Digital SAT</p>
+  </div>
+</footer>
+
+<script>
+/* ============ TAB SWITCHING ============ */
+function switchTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector('.nav-btn[data-tab="'+tab+'"]').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-btn').forEach(btn=>{btn.addEventListener('click',()=>switchTab(btn.dataset.tab));});
+
+function showScreen(name){
+  const screens = { selector:document.getElementById('satSetSelector'), test:document.getElementById('satTestScreen'), result:document.getElementById('satResultScreen') };
+  Object.entries(screens).forEach(([k,el])=>{ if(!el) return; el.style.display = (k===name) ? (k==='selector'?'grid':'block') : 'none'; });
+}
+
+/* ============ SOUND ============ */
+let audioCtx=null;
+function getCtx(){if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended') audioCtx.resume();return audioCtx;}
+function playDing(){try{const ctx=getCtx();[880,1320].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.08);g.gain.setValueAtTime(0.18,ctx.currentTime+i*0.08);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.08+0.35);o.start(ctx.currentTime+i*0.08);o.stop(ctx.currentTime+i*0.08+0.4);});}catch(e){}}
+function playBuzz(){try{const ctx=getCtx();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(180,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(90,ctx.currentTime+0.3);g.gain.setValueAtTime(0.15,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.35);o.start(ctx.currentTime);o.stop(ctx.currentTime+0.4);}catch(e){}}
+function playFanfare(){try{const ctx=getCtx();[523,659,784,1046].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.setValueAtTime(f,ctx.currentTime+i*0.12);g.gain.setValueAtTime(0.2,ctx.currentTime+i*0.12);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.12+0.5);o.start(ctx.currentTime+i*0.12);o.stop(ctx.currentTime+i*0.12+0.6);});}catch(e){}}
+
+/* ============ VOCABULARY — 40 từ ============ */
+const vocab=[
+  ["Parallel","/ˈpærəlel/","Song song","Two parallel lines never intersect."],
+  ["Coplanar","/koʊˈpleɪnər/","Đồng phẳng","Parallel lines must be coplanar."],
+  ["Skew lines","/skjuː laɪnz/","Hai đường chéo nhau","Skew lines are non-coplanar."],
+  ["Plane","/pleɪn/","Mặt phẳng","Two parallel planes never meet."],
+  ["Line","/laɪn/","Đường thẳng","A line lies in a plane or not."],
+  ["Intersecting","/ˌɪntərˈsektɪŋ/","Cắt nhau","Intersecting lines share one point."],
+  ["Coincident","/koʊˈɪnsɪdənt/","Trùng nhau","Coincident lines are the same."],
+  ["Transversal","/trænsˈvɜːrsl/","Cát tuyến","A transversal cuts two parallel lines."],
+  ["Alternate angles","/ˈɔːltərnət ˈæŋɡlz/","Góc so le","Alternate interior angles are equal."],
+  ["Corresponding angles","/ˌkɔːrəˈspɑːndɪŋ ˈæŋɡlz/","Góc đồng vị","Corresponding angles are equal."],
+  ["Consecutive interior","/kənˈsekjətɪv ɪnˈtɪriər/","Góc trong cùng phía","Sum = \\(180^\\circ\\)."],
+  ["Parallel to plane","/ˈpærəlel tuː pleɪn/","Song song mặt phẳng","A line with no common point with a plane."],
+  ["Parallel planes","/ˈpærəlel pleɪnz/","Hai mặt phẳng song song","They have no common point."],
+  ["Theorem","/ˈθɪərəm/","Định lý","Apply the parallel lines theorem."],
+  ["Consequence","/ˈkɑːnsɪkwens/","Hệ quả","A consequence of the theorem."],
+  ["Thales","/ˈθeɪliːz/","Thales","Thales' theorem in space."],
+  ["Proportional","/prəˈpɔːrʃənl/","Tỉ lệ","Segments are proportional."],
+  ["Ratio","/ˈreɪʃioʊ/","Tỉ số","The ratio of segments."],
+  ["Segment","/ˈseɡmənt/","Đoạn thẳng","A segment is a piece of a line."],
+  ["Midpoint","/ˈmɪdpɔɪnt/","Trung điểm","The midpoint splits a segment equally."],
+  ["Midsegment","/ˈmɪdseɡmənt/","Đường trung bình","The midsegment is parallel to the base."],
+  ["Parallel projection","/ˈpærəlel prəˈdʒekʃn/","Phép chiếu song song","Projection preserves parallel ratios."],
+  ["Projection","/prəˈdʒekʃn/","Hình chiếu","The image of a point under projection."],
+  ["Prism","/ˈprɪzəm/","Lăng trụ","A prism has two parallel bases."],
+  ["Parallelepiped","/ˌpærəleləˈpaɪpɪd/","Hình hộp","A parallelepiped has 6 parallelograms."],
+  ["Cube","/kjuːb/","Hình lập phương","A cube has 6 congruent square faces."],
+  ["Cuboid","/ˈkjuːbɔɪd/","Hình hộp chữ nhật","A cuboid has 3 pairs of parallel faces."],
+  ["Base","/beɪs/","Đáy","The bases of a prism are parallel."],
+  ["Edge","/edʒ/","Cạnh","A cube has 12 edges."],
+  ["Vertex","/ˈvɜːrteks/","Đỉnh","A cube has 8 vertices."],
+  ["Face","/feɪs/","Mặt","A cube has 6 faces."],
+  ["Diagonal","/daɪˈæɡənl/","Đường chéo","Space diagonal of a cube is \\(a\\sqrt{3}\\)."],
+  ["Cross-section","/krɔːs ˈsekʃn/","Thiết diện","A cross-section parallel to the base is a square."],
+  ["Equidistant","/ˌiːkwɪˈdɪstənt/","Cách đều","Parallel planes are equidistant."],
+  ["Distance","/ˈdɪstəns/","Khoảng cách","The distance between parallel planes."],
+  ["Direction","/dəˈrekʃn/","Phương","Two lines with the same direction are parallel."],
+  ["Vector","/ˈvektər/","Vector","Direction vector of a line."],
+  ["Collinear","/kəˈlɪniər/","Thẳng hàng","Points on the same line."],
+  ["Non-coplanar","/nɒn koʊˈpleɪnər/","Không đồng phẳng","Skew lines are non-coplanar."],
+  ["Similar","/ˈsɪmələr/","Đồng dạng","Similar triangles have proportional sides."]
+];
+
+function renderVocab(filter){
+  filter = filter || "";
+  const tbody = document.querySelector('#vocabTable tbody');
+  tbody.innerHTML = '';
+  const f = filter.toLowerCase().trim();
+  vocab.forEach((v,i)=>{
+    if(f && v[0].toLowerCase().indexOf(f)<0 && v[2].toLowerCase().indexOf(f)<0) return;
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+(i+1)+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td><td>'+v[2]+'</td><td>'+v[3]+'</td><td><button class="speak-btn" data-word="'+v[0]+'" title="Phát âm">🔊</button></td>';
+    tbody.appendChild(tr);
+  });
+  if(window.renderMathInElement) renderMathInElement(tbody,{delimiters:[{left:'\\(',right:'\\)',display:false}]});
+}
+document.getElementById('vocabSearch').addEventListener('input',e=>renderVocab(e.target.value));
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('speak-btn')){
+    const word = e.target.dataset.word;
+    if('speechSynthesis' in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(word);u.lang='en-US';u.rate=0.9;speechSynthesis.speak(u);}
+  }
+});
+renderVocab();
+
+/* ============ PRACTICE 3 nhóm × 10 câu ============ */
+const practiceData = {
+  1:[
+    {q:"Two lines are parallel if they:",opts:["intersect at one point","are coplanar and have no common point","are skew","are perpendicular"],ans:1,exp:"Parallel lines are coplanar with no common point.",review:"Ôn mục I — Định nghĩa hai đường song song"},
+    {q:"How many common points can two parallel lines have?",opts:["0","1","2","Infinite"],ans:0,exp:"Parallel lines have no common point.",review:"Ôn mục I — Vị trí tương đối"},
+    {q:"If \\(a \\parallel b\\) and \\(b \\parallel c\\) (\\(a \\neq c\\)), then:",opts:["\\(a \\perp c\\)","\\(a \\parallel c\\)","\\(a\\) and \\(c\\) are skew","\\(a\\) intersects \\(c\\)"],ans:1,exp:"Two lines parallel to a third are parallel to each other.",review:"Ôn mục I — Định lý bắc cầu"},
+    {q:"A line \\(d\\) is parallel to a plane \\((P)\\) if:",opts:["\\(d \\subset (P)\\)","\\(d\\) has exactly one point with \\((P)\\)","\\(d\\) has no common point with \\((P)\\)","\\(d \\perp (P)\\)"],ans:2,exp:"\\(d \\parallel (P)\\) when no common point.",review:"Ôn mục II — Định nghĩa"},
+    {q:"If \\(d \\parallel (P)\\) and \\(d \\subset (Q)\\), \\((P) \\cap (Q) = a\\), then:",opts:["\\(d \\perp a\\)","\\(d \\parallel a\\)","\\(d\\) intersects \\(a\\)","\\(d = a\\)"],ans:1,exp:"Hệ quả: \\(d \\parallel a\\).",review:"Ôn mục II — Hệ quả"},
+    {q:"Two planes are parallel if:",opts:["they intersect in one point","they have no common point","they intersect in one line","they are perpendicular"],ans:1,exp:"Parallel planes have no common point.",review:"Ôn mục III — Định nghĩa"},
+    {q:"If \\((P) \\parallel (Q)\\) and \\((R) \\cap (P) = a\\), \\((R) \\cap (Q) = b\\), then:",opts:["\\(a \\perp b\\)","\\(a \\parallel b\\)","\\(a\\) and \\(b\\) are skew","\\(a = b\\)"],ans:1,exp:"Giao tuyến song song: \\(a \\parallel b\\).",review:"Ôn mục III — Giao tuyến song song"},
+    {q:"How many edges does a cube have?",opts:["6","8","12","16"],ans:2,exp:"A cube has 12 edges.",review:"Ôn mục V — Hình lập phương"},
+    {q:"The space diagonal of a cube with edge \\(a\\) equals:",opts:["\\(a\\)","\\(a\\sqrt{2}\\)","\\(a\\sqrt{3}\\)","\\(2a\\)"],ans:2,exp:"\\(d = a\\sqrt{3}\\).",review:"Ôn mục V — Đường chéo hình lập phương"},
+    {q:"Volume of a rectangular prism \\(2\\times 3\\times 4\\) is:",opts:["9","12","24","48"],ans:2,exp:"\\(V = 2\\cdot 3\\cdot 4 = 24\\).",review:"Ôn mục V — Thể tích hình hộp"}
+  ],
+  2:[
+    {q:"In a prism, the lateral edges are:",opts:["parallel and equal","perpendicular to each other","skew","not determined"],ans:0,exp:"Lateral edges of a prism are parallel and equal.",review:"Ôn mục V — Hình lăng trụ"},
+    {q:"If a plane contains two intersecting lines that are both parallel to another plane, then the two planes are:",opts:["perpendicular","parallel","identical","skew"],ans:1,exp:"Dấu hiệu hai mặt phẳng song song.",review:"Ôn mục III — Định lý dấu hiệu"},
+    {q:"If \\(d \\parallel (P)\\), how many planes through \\(d\\) intersect \\((P)\\)?",opts:["0","1","2","Infinite (but they all intersect in lines parallel to \\(d\\))"],ans:3,exp:"Vô số mặt phẳng qua \\(d\\) cắt \\((P)\\) theo giao tuyến song song với \\(d\\).",review:"Ôn mục II — Hệ quả"},
+    {q:"The bases of a cylinder are:",opts:["perpendicular","parallel and congruent","skew","not determined"],ans:1,exp:"Cylinder bases are parallel and congruent circles.",review:"Ôn mục V — Hình trụ"},
+    {q:"A cross-section of a cube parallel to a face is:",opts:["a triangle","a rectangle","a square","a hexagon"],ans:2,exp:"A plane parallel to a face cuts a congruent square.",review:"Ôn mục V — Thiết diện"},
+    {q:"Distance between two parallel planes \\(x+y+z=1\\) and \\(x+y+z=4\\) is:",opts:["\\(1\\)","\\(\\sqrt{3}\\)","\\(3\\sqrt{3}\\)","\\(3\\)"],ans:1,exp:"\\(d = |4-1|/\\sqrt{3} = \\sqrt{3}\\).",review:"Ôn mục III — Khoảng cách hai mặt song song"},
+    {q:"If \\((P) \\parallel (Q)\\) and a line \\(d \\perp (P)\\), then:",opts:["\\(d \\parallel (Q)\\)","\\(d \\perp (Q)\\)","\\(d \\subset (Q)\\)","Not determined"],ans:1,exp:"A line perpendicular to one of two parallel planes is perpendicular to the other.",review:"Ôn mục III"},
+    {q:"Parallel projection preserves:",opts:["lengths of all segments","ratios of parallel segments","angles between lines","areas of all figures"],ans:1,exp:"Phép chiếu song song bảo toàn tỉ số các đoạn thẳng song song.",review:"Ôn mục IV — Phép chiếu song song"},
+    {q:"Given 3 parallel planes cutting two transversals, the corresponding segments are:",opts:["equal","perpendicular","proportional","parallel"],ans:2,exp:"Định lý Thales trong không gian.",review:"Ôn mục III — Thales"},
+    {q:"A cube has how many pairs of parallel edges?",opts:["6","12","18","24"],ans:2,exp:"Mỗi phương có C(4,2) = 6 cặp cạnh song song. 3 phương → 18 cặp.",review:"Ôn mục V — Hình lập phương"}
+  ],
+  3:[
+    {q:"If \\(d_1, d_2\\) are skew, how many planes contain \\(d_1\\) and are parallel to \\(d_2\\)?",opts:["0","1","2","Infinite"],ans:1,exp:"Có duy nhất một mặt phẳng qua \\(d_1\\) và song song \\(d_2\\).",review:"Ôn mục II"},
+    {q:"In a tetrahedron ABCD, midpoint M of AB, midpoint N of AC. Then MN is:",opts:["perpendicular to BC","parallel to BC and \\(MN = BC/2\\)","skew to BC","equal to BC"],ans:1,exp:"MN là đường trung bình: \\(MN \\parallel BC\\), \\(MN = BC/2\\).",review:"Ôn mục V — Đường trung bình"},
+    {q:"If \\(a \\parallel (P)\\) and \\(b \\parallel (P)\\) and \\(a \\cap b = M\\), then the plane \\((a,b)\\):",opts:["is perpendicular to (P)","is parallel to (P)","intersects (P) in one line","contains (P)"],ans:1,exp:"Hai đường cắt nhau cùng song song với (P) → mặt phẳng chứa chúng song song (P).",review:"Ôn mục III — Dấu hiệu"},
+    {q:"Given tetrahedron ABCD. Points M, N on AB, AC with \\(AM/MB = AN/NC = 1/2\\). Then MN is:",opts:["parallel to BC","perpendicular to BC","skew to BC","equal to BC"],ans:0,exp:"Theo Thales đảo, MN song song BC.",review:"Ôn mục III — Thales đảo"},
+    {q:"A plane parallel to a base of a cube with edge 4 cuts the cube into two parts. The cross-section is a square of side:",opts:["2","3","4","Variable"],ans:2,exp:"Cross-section parallel to face = congruent square of side 4.",review:"Ôn mục V — Thiết diện"},
+    {q:"Let \\(a, b\\) be skew lines. How many planes contain \\(a\\) and are parallel to \\(b\\)?",opts:["0","1","2","Infinite"],ans:1,exp:"Có duy nhất một mặt phẳng.",review:"Ôn mục II"},
+    {q:"Two parallel planes \\((P)\\parallel (Q)\\), distance 5. If \\(A \\in (P)\\) and \\(B \\in (Q)\\), then minimum \\(AB =\\)",opts:["0","\\(<5\\)","5","\\(>5\\)"],ans:2,exp:"Khoảng cách giữa hai mặt phẳng song song là đoạn ngắn nhất = 5.",review:"Ôn mục III"},
+    {q:"In cube ABCD.A'B'C'D', the planes (ABCD) and (A'B'C'D') are:",opts:["parallel","perpendicular","intersecting","skew"],ans:0,exp:"Hai mặt đáy của hình lập phương song song.",review:"Ôn mục V"},
+    {q:"In a cuboid \\(3\\times 4\\times 12\\), the space diagonal is:",opts:["13","14","15","19"],ans:0,exp:"\\(\\sqrt{9+16+144} = \\sqrt{169} = 13\\).",review:"Ôn mục V — Đường chéo"},
+    {q:"If \\(a \\parallel b\\), \\(b \\subset (P)\\), \\(a \\not\\subset (P)\\), then:",opts:["\\(a \\perp (P)\\)","\\(a \\parallel (P)\\)","\\(a \\subset (P)\\)","\\(a\\) intersects (P)"],ans:1,exp:"Dấu hiệu: \\(a \\parallel b\\), \\(b \\subset (P)\\), \\(a \\not\\subset (P)\\) → \\(a \\parallel (P)\\).",review:"Ôn mục II — Định lý dấu hiệu"}
+  ]
+};
+
+const letterMap = ['A','B','C','D'];
+
+function renderPractice(group){
+  const container = document.getElementById('panel-'+group);
+  container.innerHTML = '';
+  practiceData[group].forEach((item,idx)=>{
+    const card = document.createElement('div');
+    card.className = 'q-card'; card.id = 'g'+group+'q'+idx;
+    let optsHtml = '';
+    item.opts.forEach((o,i)=>{optsHtml += '<button class="option" data-group="'+group+'" data-q="'+idx+'" data-opt="'+i+'"><span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span></button>';});
+    card.innerHTML = '<div class="q-head"><div class="q-num">'+(idx+1)+'</div><div class="q-text">'+item.q+'</div></div><div class="options">'+optsHtml+'</div><div class="feedback" id="fb-'+group+'-'+idx+'"></div>';
+    container.appendChild(card);
+  });
+  if(window.renderMathInElement) renderMathInElement(container,{delimiters:[{left:'\\(',right:'\\)',display:false}]});
+}
+document.querySelectorAll('.group-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.group-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.group-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.group).classList.add('active');
+  });
+});
+[1,2,3].forEach(renderPractice);
+
+document.addEventListener('click',e=>{
+  const btn = e.target.closest('.option');
+  if(!btn || btn.classList.contains('disabled')) return;
+  const group = btn.dataset.group; if(!group) return;
+  const qIdx = +btn.dataset.q, optIdx = +btn.dataset.opt;
+  const card = document.getElementById('g'+group+'q'+qIdx);
+  const item = practiceData[group][qIdx];
+  const fb = document.getElementById('fb-'+group+'-'+qIdx);
+  const allOpts = card.querySelectorAll('.option');
+  allOpts.forEach(o=>o.classList.add('disabled'));
+  allOpts[item.ans].classList.add('correct');
+  const isCorrect = optIdx === item.ans;
+  if(!isCorrect) btn.classList.add('wrong');
+  card.classList.add(isCorrect?'correct':'wrong');
+  fb.className = 'feedback show ' + (isCorrect?'ok':'no');
+  if(isCorrect){ fb.innerHTML = '<strong>✅ Correct!</strong>'+item.exp+'<div class="review">💡 '+item.review+'</div>'; playDing(); }
+  else { fb.innerHTML = '<strong>❌ Incorrect. Correct answer: '+letterMap[item.ans]+'</strong>'+item.exp+'<div class="review">📖 Ôn tập lại: '+item.review+'</div>'; playBuzz(); }
+  if(window.renderMathInElement) renderMathInElement(fb,{delimiters:[{left:'\\(',right:'\\)',display:false}]});
+});
+
+/* ============ SAT DATA — 3 sets × 30 câu ============ */
+const TOPICS = {
+  PARA_LINES:"Đường // đường",
+  PARA_LINE_PLANE:"Đường // mặt phẳng",
+  PARA_PLANES:"Mặt // mặt",
+  THALES:"Thales & tỉ lệ",
+  PROJECTION:"Phép chiếu song song",
+  SOLID:"Hình khối không gian",
+  APP:"Ứng dụng thực tế"
+};
+
+const TOPIC_RECOMMENDATIONS = {
+  PARA_LINES:"Nắm 3 vị trí tương đối (song song, cắt, chéo). Nhớ: hai đường cùng song song với một đường thứ ba thì song song với nhau.",
+  PARA_LINE_PLANE:"Định lý dấu hiệu: nếu \\(d \\not\\subset (P)\\) và \\(d \\parallel a \\subset (P)\\) thì \\(d \\parallel (P)\\). Hệ quả giao tuyến song song.",
+  PARA_PLANES:"Định lý dấu hiệu: mặt chứa 2 đường cắt nhau cùng song song với mặt kia. Giao tuyến của mặt thứ ba song song với nhau.",
+  THALES:"Định lý Thales: 3 mặt phẳng đôi một song song chắn trên 2 cát tuyến các đoạn tỉ lệ. Đường trung bình: song song và bằng nửa đáy.",
+  PROJECTION:"Phép chiếu song song biến đường thẳng → đường thẳng, bảo toàn tỉ số các đoạn song song, biến 3 điểm thẳng hàng → 3 điểm thẳng hàng.",
+  SOLID:"Nhớ công thức: \\(V_{hộp}=abc\\), \\(V_{lập phương}=a^3\\), đường chéo hình hộp \\(\\sqrt{a^2+b^2+c^2}\\), hình lập phương \\(a\\sqrt{3}\\).",
+  APP:"Đọc kỹ đề, vẽ hình, xác định yếu tố song song, áp dụng định lý phù hợp và kiểm tra đơn vị."
+};
+
+const PRIORITY_STEPS = {
+  PARA_LINES:[
+    "Viết ra giấy 4 vị trí: trùng – cắt – song song – chéo.",
+    "Học định lý bắc cầu: \\(a\\parallel c\\), \\(b\\parallel c\\), \\(a\\neq b \\Rightarrow a\\parallel b\\).",
+    "Luyện dạng nhận dạng song song trong hình lập phương, hình hộp."
+  ],
+  PARA_LINE_PLANE:[
+    "Ghi nhớ: \\(d \\not\\subset (P)\\), \\(d \\parallel a \\subset (P) \\Rightarrow d \\parallel (P)\\).",
+    "Hệ quả: nếu \\(d \\parallel (P)\\), mặt qua \\(d\\) cắt \\((P)\\) theo giao tuyến song song \\(d\\).",
+    "Chú ý: nếu chỉ có \\(d \\parallel a\\) với \\(a \\subset (P)\\) mà \\(d \\subset (P)\\) thì không suy ra được \\(d\\parallel(P)\\)."
+  ],
+  PARA_PLANES:[
+    "Dấu hiệu: chứa 2 đường cắt nhau song song với mặt kia.",
+    "Giao tuyến: nếu \\((P)\\parallel(Q)\\), cát tuyến \\((R)\\) cắt 2 mặt theo 2 giao tuyến song song.",
+    "Liên hệ: hai mặt song song thì khoảng cách giữa chúng không đổi."
+  ],
+  THALES:[
+    "Phát biểu Thales trong không gian: 3 mặt phẳng đôi một song song chắn 2 cát tuyến các đoạn tỉ lệ.",
+    "Đường trung bình trong tam giác và tứ diện: song song và bằng một nửa.",
+    "Luyện dạng cho tỉ lệ \\(AM/MB = k\\) suy ra song song (Thales đảo)."
+  ],
+  PROJECTION:[
+    "Định nghĩa: chiếu theo phương \\(l\\) lên \\((P)\\).",
+    "Tính chất: 3 điểm thẳng hàng → 3 điểm thẳng hàng; hình bình hành → hình bình hành.",
+    "Tỉ số các đoạn song song được bảo toàn."
+  ],
+  SOLID:[
+    "Học thuộc: \\(V_{hộp}=abc\\), \\(V_{lập phương}=a^3\\), \\(d_{hộp}=\\sqrt{a^2+b^2+c^2}\\), \\(d_{lập phương}=a\\sqrt{3}\\).",
+    "Tính chất lăng trụ: 2 đáy song song – bằng nhau; cạnh bên song song – bằng nhau.",
+    "Đếm cẩn thận: hình lập phương có 6 mặt, 8 đỉnh, 12 cạnh."
+  ],
+  APP:[
+    "Xác định đại lượng cần tìm (song song? tỉ lệ? thể tích? khoảng cách?).",
+    "Vẽ hình + đánh dấu yếu tố đã biết + đánh dấu yếu tố song song.",
+    "Kiểm tra đơn vị và làm tròn."
+  ]
+};
+
+const SAT_SETS = {
+  1: {
+    name:"Bộ 1 — Foundations",
+    desc:"Kiến thức nền: định nghĩa song song, vị trí tương đối, hình lập phương và hình hộp chữ nhật, đường chéo, thể tích cơ bản.",
+    questions:[
+      {q:"Two lines are parallel if:",opts:["They intersect at 1 point","They are coplanar and have no common point","They are skew","They are perpendicular"],ans:1,topic:"PARA_LINES",exp:"Parallel lines are coplanar with no common point.",review:"Ôn mục I — Định nghĩa"},
+      {q:"How many common points can two parallel lines have?",opts:["0","1","2","Infinite"],ans:0,topic:"PARA_LINES",exp:"No common point.",review:"Ôn mục I"},
+      {q:"If \\(a \\parallel b\\) and \\(b \\parallel c\\) (\\(a\\neq c\\)), then:",opts:["\\(a\\perp c\\)","\\(a\\parallel c\\)","\\(a,c\\) skew","\\(a\\) intersects \\(c\\)"],ans:1,topic:"PARA_LINES",exp:"Định lý bắc cầu.",review:"Ôn mục I — Định lý bắc cầu"},
+      {q:"A line \\(d\\) is parallel to a plane \\((P)\\) if:",opts:["\\(d\\subset(P)\\)","\\(d\\) has exactly 1 common point with (P)","\\(d\\) has no common point with (P)","\\(d\\perp(P)\\)"],ans:2,topic:"PARA_LINE_PLANE",exp:"No common point.",review:"Ôn mục II"},
+      {q:"If \\(d\\parallel(P)\\) and \\(d\\subset(Q)\\), \\((P)\\cap(Q)=a\\), then:",opts:["\\(d\\perp a\\)","\\(d\\parallel a\\)","\\(d\\) intersects \\(a\\)","\\(d=a\\)"],ans:1,topic:"PARA_LINE_PLANE",exp:"Hệ quả: \\(d\\parallel a\\).",review:"Ôn mục II — Hệ quả"},
+      {q:"Two planes are parallel if:",opts:["They intersect in 1 point","They have no common point","They intersect in 1 line","They are perpendicular"],ans:1,topic:"PARA_PLANES",exp:"Parallel planes have no common point.",review:"Ôn mục III"},
+      {q:"If \\((P)\\parallel(Q)\\), \\((R)\\cap(P)=a\\), \\((R)\\cap(Q)=b\\), then:",opts:["\\(a\\perp b\\)","\\(a\\parallel b\\)","\\(a,b\\) skew","\\(a=b\\)"],ans:1,topic:"PARA_PLANES",exp:"\\(a\\parallel b\\).",review:"Ôn mục III — Giao tuyến song song"},
+      {q:"How many edges does a cube have?",opts:["6","8","12","16"],ans:2,topic:"SOLID",exp:"12 edges.",review:"Ôn mục V"},
+      {q:"How many vertices does a cube have?",opts:["4","6","8","12"],ans:2,topic:"SOLID",exp:"8 vertices.",review:"Ôn mục V"},
+      {q:"Space diagonal of a cube with edge \\(a\\):",opts:["\\(a\\)","\\(a\\sqrt{2}\\)","\\(a\\sqrt{3}\\)","\\(2a\\)"],ans:2,topic:"SOLID",exp:"\\(a\\sqrt{3}\\).",review:"Ôn mục V — Đường chéo"},
+      {q:"Volume of a rectangular prism \\(2\\times 3\\times 4\\):",opts:["9","12","24","48"],ans:2,topic:"SOLID",exp:"\\(2\\cdot 3\\cdot 4 = 24\\).",review:"Ôn mục V — Thể tích"},
+      {q:"Surface area of a cube with edge 3:",opts:["9","27","54","81"],ans:2,topic:"SOLID",exp:"\\(6a^2=6\\cdot 9=54\\).",review:"Ôn mục V — Diện tích"},
+      {q:"Two distinct lines in space are called skew if:",opts:["They are parallel","They intersect","They are not coplanar","They are perpendicular"],ans:2,topic:"PARA_LINES",exp:"Skew = không đồng phẳng.",review:"Ôn mục I — Vị trí tương đối"},
+      {q:"If line \\(d\\) is parallel to plane \\((P)\\), then:",opts:["\\(d\\) lies in \\((P)\\)","\\(d\\) has no common point with \\((P)\\)","\\(d\\perp(P)\\)","\\(d\\) intersects \\((P)\\) once"],ans:1,topic:"PARA_LINE_PLANE",exp:"Định nghĩa.",review:"Ôn mục II"},
+      {q:"A plane \\((P)\\) and a line \\(d\\) can have how many common points?",opts:["Always 0","Always 1","0, 1, or infinitely many","Always infinite"],ans:2,topic:"PARA_LINE_PLANE",exp:"0 (song song), 1 (cắt), hoặc vô số (chứa nhau).",review:"Ôn mục II"},
+      {q:"The lateral edges of a prism are:",opts:["Parallel and equal","Perpendicular to each other","Skew","Not determined"],ans:0,topic:"SOLID",exp:"Cạnh bên lăng trụ song song và bằng nhau.",review:"Ôn mục V — Lăng trụ"},
+      {q:"Two parallel planes have:",opts:["Exactly 1 common point","Exactly 1 common line","No common point","Infinite common points"],ans:2,topic:"PARA_PLANES",exp:"Định nghĩa.",review:"Ôn mục III"},
+      {q:"In a cube ABCD.A'B'C'D', edges AB and A'B' are:",opts:["Skew","Perpendicular","Parallel and equal","Intersecting"],ans:2,topic:"SOLID",exp:"Cạnh bên song song và bằng nhau.",review:"Ôn mục V"},
+      {q:"In a cube ABCD.A'B'C'D', edges AB and C'D' are:",opts:["Equal and parallel","Skew","Perpendicular","Coincident"],ans:0,topic:"SOLID",exp:"\\(AB\\parallel DC \\parallel D'C'\\) và cùng độ dài.",review:"Ôn mục V"},
+      {q:"Two parallel planes \\((P)\\parallel(Q)\\). Distance 4. A line perpendicular to \\((P)\\) has length between the two planes:",opts:["<4","=4",">4","Cannot determine"],ans:1,topic:"PARA_PLANES",exp:"Khoảng cách giữa 2 mặt song song đo theo phương vuông góc.",review:"Ôn mục III"},
+      {q:"Volume of a cylinder radius 2, height 5 (in cubic units):",opts:["\\(10\\pi\\)","\\(20\\pi\\)","\\(40\\pi\\)","\\(100\\pi\\)"],ans:1,topic:"SOLID",exp:"\\(\\pi r^2 h = 20\\pi\\).",review:"Ôn mục V — Hình trụ"},
+      {q:"Distance from point \\((0,0,0)\\) to plane \\(z=5\\):",opts:["0","1","5","\\(\\sqrt{5}\\)"],ans:2,topic:"PARA_PLANES",exp:"Khoảng cách = 5.",review:"Ôn mục III — Khoảng cách"},
+      {q:"Two planes \\(z=0\\) and \\(z=3\\) are:",opts:["Parallel","Perpendicular","Identical","Skew"],ans:0,topic:"PARA_PLANES",exp:"Hai mặt phẳng song song.",review:"Ôn mục III"},
+      {q:"A line \\(d\\) is coplanar with plane \\((P)\\) if:",opts:["\\(d\\parallel(P)\\)","\\(d\\subset(P)\\) or \\(d\\) intersects \\((P)\\) at 1 point","\\(d\\perp(P)\\)","Always"],ans:1,topic:"PARA_LINE_PLANE",exp:"Coplanar khi \\(d\\) nằm trong hoặc cắt tại 1 điểm.",review:"Ôn mục II"},
+      {q:"Parallel planes are equidistant means:",opts:["The distance between them is constant","They intersect","They are perpendicular","They touch"],ans:0,topic:"PARA_PLANES",exp:"Khoảng cách không đổi = equidistant.",review:"Ôn mục III"},
+      {q:"Line parallel to plane theorem — if \\(d\\not\\subset(P)\\), \\(d\\parallel a \\subset(P)\\), then:",opts:["\\(d\\perp(P)\\)","\\(d\\parallel(P)\\)","\\(d\\subset(P)\\)","\\(d\\) intersects \\((P)\\)"],ans:1,topic:"PARA_LINE_PLANE",exp:"\\(d\\parallel(P)\\).",review:"Ôn mục II — Định lý dấu hiệu"},
+      {q:"A plane contains 2 intersecting lines parallel to another plane. The 2 planes are:",opts:["Parallel","Perpendicular","Identical","Skew"],ans:0,topic:"PARA_PLANES",exp:"Dấu hiệu mặt phẳng song song.",review:"Ôn mục III — Định lý dấu hiệu"},
+      {q:"If \\(d\\parallel(P)\\) and \\(a\\subset(P)\\), can \\(d\\) and \\(a\\) intersect?",opts:["Yes always","No, never","Only if \\(a\\perp d\\)","Only if \\(a=d\\)"],ans:1,topic:"PARA_LINE_PLANE",exp:"\\(d\\) và \\(a\\) không có điểm chung vì \\(d\\parallel(P)\\).",review:"Ôn mục II"},
+      {q:"In a cuboid \\(3\\times 4\\times 12\\), space diagonal:",opts:["13","14","15","19"],ans:0,topic:"SOLID",exp:"\\(\\sqrt{9+16+144}=\\sqrt{169}=13\\).",review:"Ôn mục V"},
+      {q:"In a cube, how many pairs of parallel edges?",opts:["6","12","18","24"],ans:2,topic:"SOLID",exp:"3 directions × C(4,2) = 3×6 = 18.",review:"Ôn mục V"}
+    ]
+  },
+  2: {
+    name:"Bộ 2 — Intermediate",
+    desc:"Áp dụng định lý song song, giao tuyến, Thales, phép chiếu, tính chất của hình lăng trụ và hình hộp.",
+    questions:[
+      {q:"If \\(a\\parallel(P)\\), \\(b\\parallel(P)\\), \\(a\\cap b=M\\), then plane \\((a,b)\\):",opts:["⊥ (P)","∥ (P)","intersects (P) in one line","contains (P)"],ans:1,topic:"PARA_PLANES",exp:"Mặt phẳng chứa 2 đường cắt nhau cùng song song (P) thì song song (P).",review:"Ôn mục III — Dấu hiệu"},
+      {q:"In tetrahedron ABCD, M, N are midpoints of AB, AC. Then MN:",opts:["⊥ BC","∥ BC and MN = BC/2","skew to BC","= BC"],ans:1,topic:"THALES",exp:"MN là đường trung bình, MN ∥ BC, MN = BC/2.",review:"Ôn mục V — Đường trung bình"},
+      {q:"Given tetrahedron ABCD, M∈AB, N∈AC with AM/MB = AN/NC = 1/2. Then MN:",opts:["∥ BC","⊥ BC","skew to BC","= BC"],ans:0,topic:"THALES",exp:"Theo Thales đảo: MN ∥ BC.",review:"Ôn mục III — Thales đảo"},
+      {q:"If \\(d\\parallel(P)\\), how many planes through \\(d\\) intersect \\((P)\\)?",opts:["0","1","2","Infinite (all intersecting in lines parallel to d)"],ans:3,topic:"PARA_LINE_PLANE",exp:"Vô số mặt phẳng, giao tuyến đều song song với \\(d\\).",review:"Ôn mục II — Hệ quả"},
+      {q:"Distance between planes \\(x+y+z=1\\) and \\(x+y+z=4\\):",opts:["1","\\(\\sqrt{3}\\)","\\(3\\sqrt{3}\\)","3"],ans:1,topic:"PARA_PLANES",exp:"\\(d=|4-1|/\\sqrt{3}=\\sqrt{3}\\).",review:"Ôn mục III"},
+      {q:"If \\((P)\\parallel(Q)\\) and \\(d\\perp(P)\\), then:",opts:["\\(d\\parallel(Q)\\)","\\(d\\perp(Q)\\)","\\(d\\subset(Q)\\)","not determined"],ans:1,topic:"PARA_PLANES",exp:"Đường vuông góc với một trong hai mặt song song thì vuông góc với mặt kia.",review:"Ôn mục III"},
+      {q:"Parallel projection preserves:",opts:["lengths of all segments","ratios of parallel segments","all angles","all areas"],ans:1,topic:"PROJECTION",exp:"Bảo toàn tỉ số các đoạn song song.",review:"Ôn mục IV"},
+      {q:"3 parallel planes cut 2 transversals. The segments are:",opts:["equal","perpendicular","proportional","parallel"],ans:2,topic:"THALES",exp:"Định lý Thales trong không gian.",review:"Ôn mục III — Thales"},
+      {q:"Line \\(d\\parallel b\\), \\(b\\subset(P)\\), \\(d\\not\\subset(P)\\). Then:",opts:["\\(d\\perp(P)\\)","\\(d\\parallel(P)\\)","\\(d\\subset(P)\\)","\\(d\\) intersects (P)"],ans:1,topic:"PARA_LINE_PLANE",exp:"Dấu hiệu \\(d\\parallel(P)\\).",review:"Ôn mục II — Dấu hiệu"},
+      {q:"A line \\(d\\) is perpendicular to 2 intersecting lines in \\((P)\\), \\(d\\cap(P)=H\\). Then \\(d\\):",opts:["∥ (P)","⊥ (P)","⊂ (P)","skew to (P)"],ans:1,topic:"PARA_LINE_PLANE",exp:"\\(d\\perp(P)\\).",review:"Ôn mục II"},
+      {q:"A plane parallel to a face of a cube with edge 4 cuts a square of side:",opts:["2","3","4","Variable"],ans:2,topic:"SOLID",exp:"Cross-section parallel to a face = congruent square, side 4.",review:"Ôn mục V — Thiết diện"},
+      {q:"Let \\(a, b\\) be skew lines. How many planes contain \\(a\\) and are parallel to \\(b\\)?",opts:["0","1","2","Infinite"],ans:1,topic:"PARA_LINES",exp:"Có duy nhất một mặt phẳng.",review:"Ôn mục II"},
+      {q:"Volume of a prism with base area 12 and height 5:",opts:["17","30","60","120"],ans:2,topic:"SOLID",exp:"V = Bh = 12·5 = 60.",review:"Ôn mục V — Lăng trụ"},
+      {q:"In a rectangular prism \\(3\\times 4\\times 12\\), lateral surface area (4 lateral faces):",opts:["72","96","144","168"],ans:3,topic:"SOLID",exp:"Chu vi đáy = 2(3+4) = 14. Chiều cao = 12. Diện tích xung quanh \\(S_{xq} = 14 \\times 12 = 168\\).",review:"Ôn mục V — Diện tích xung quanh"},
+      {q:"If \\(d\\parallel(P)\\), then \\(d\\) is parallel to:",opts:["Every line in \\((P)\\)","At least one line in \\((P)\\), but not necessarily all","No line in \\((P)\\)","All lines in \\((P)\\) that intersect it"],ans:1,topic:"PARA_LINE_PLANE",exp:"\\(d\\parallel(P)\\) ⇒ tồn tại ít nhất một đường song song \\(d\\) trong \\((P)\\), nhưng không phải mọi đường.",review:"Ôn mục II"},
+      {q:"In a cube ABCD.A'B'C'D', which pair of edges is skew?",opts:["AB and A'B'","AB and CD","AB and B'C'","AB and C'D'"],ans:2,topic:"SOLID",exp:"\\(AB\\) và \\(B'C'\\) không đồng phẳng.",review:"Ôn mục V"},
+      {q:"A cube has edge 2. Distance between two parallel faces is:",opts:["1","2","\\(\\sqrt{3}\\)","\\(2\\sqrt{3}\\)"],ans:1,topic:"SOLID",exp:"Khoảng cách hai mặt đối diện = cạnh = 2.",review:"Ôn mục V"},
+      {q:"If two planes are parallel and one contains line d, then the other:",opts:["contains d","is parallel to d","is perpendicular to d","intersects d"],ans:1,topic:"PARA_PLANES",exp:"\\((P)\\parallel(Q)\\), \\(d\\subset(P)\\) ⇒ \\(d\\parallel(Q)\\).",review:"Ôn mục III"},
+      {q:"Given tetrahedron ABCD, MN parallel to BC, M∈AB, N∈AC. This implies:",opts:["AM/MB ≠ AN/NC","AM/AB = AN/AC","AM·NC = AN·MB","Both B and C"],ans:3,topic:"THALES",exp:"Thales: AM/AB = AN/AC (và tỉ số bằng nhau).",review:"Ôn mục III — Thales"},
+      {q:"If \\((P)\\parallel(Q)\\) and \\(d\\subset(P)\\), \\(d'\subset(Q)\\), \\(d\\parallel d'\\), then:",opts:["Always possible","Not possible","Only if \\(d=d'\\)","Only if they intersect"],ans:0,topic:"PARA_PLANES",exp:"Luôn có thể có đường song song giữa 2 mặt song song.",review:"Ôn mục III"},
+      {q:"A parallelepiped has how many faces, edges, vertices?",opts:["6, 12, 8","4, 8, 6","8, 12, 6","6, 8, 12"],ans:0,topic:"SOLID",exp:"6 mặt, 12 cạnh, 8 đỉnh.",review:"Ôn mục V — Hình hộp"},
+      {q:"Parallel planes \\((P)\\parallel(Q)\\). \\(A,B\\in(P)\\), \\(C,D\\in(Q)\\), \\(AB\\) not parallel to \\(CD\\). Then \\(ABCD\\) is a:",opts:["Parallelogram","Trapezoid","Rhombus","Rectangle"],ans:1,topic:"PARA_PLANES",exp:"AB và CD cùng nằm trong 2 mặt song song, không song song → tứ giác ABCD là hình thang.",review:"Ôn mục III"},
+      {q:"If a line is parallel to a plane, is it parallel to every line in that plane?",opts:["Yes","No","Sometimes","Only if perpendicular"],ans:1,topic:"PARA_LINE_PLANE",exp:"Không, chỉ song song với những đường không cắt nó.",review:"Ôn mục II"},
+      {q:"The projection of a line segment onto a plane under parallel projection is:",opts:["Always a point","Always a segment of the same length","A segment (or a point)","A circle"],ans:2,topic:"PROJECTION",exp:"Chiếu song song biến đoạn thẳng thành đoạn thẳng (hoặc điểm nếu song song phương chiếu).",review:"Ôn mục IV"},
+      {q:"Which statement is TRUE about a prism?",opts:["All faces are congruent","The two bases are parallel and congruent","All edges are parallel","All faces are rectangles"],ans:1,topic:"SOLID",exp:"Định nghĩa lăng trụ: 2 đáy song song và bằng nhau.",review:"Ôn mục V"},
+      {q:"Two parallel lines \\(a\\parallel b\\). A third line \\(c\\) cuts \\(a\\) and \\(b\\). Then \\(c\\) and \\(a,b\\) are:",opts:["Skew","Coplanar","Perpendicular","Coincident"],ans:1,topic:"PARA_LINES",exp:"Coplanar (cùng nằm trong mặt phẳng xác định bởi \\(a\\) và \\(c\\)).",review:"Ôn mục I"},
+      {q:"In a cube of edge 3, distance between two parallel faces is:",opts:["1.5","3","\\(3\\sqrt{2}\\)","\\(3\\sqrt{3}\\)"],ans:1,topic:"SOLID",exp:"= cạnh = 3.",review:"Ôn mục V"},
+      {q:"If \\((P)\\parallel(Q)\\), \\(A,B\\in(P)\\), \\(C,D\\in(Q)\\) and \\(AB\\parallel CD\\), then \\(ABCD\\) is a:",opts:["Parallelogram","Trapezoid","Square","Rhombus"],ans:0,topic:"PARA_PLANES",exp:"AB và CD song song và bằng nhau → hình bình hành.",review:"Ôn mục III"},
+      {q:"Which is NOT always preserved by parallel projection?",opts:["Collinearity (3 points on a line)","Ratio of parallel segments","Angle between two lines","Image of a parallelogram being a parallelogram"],ans:2,topic:"PROJECTION",exp:"Góc giữa hai đường không được bảo toàn.",review:"Ôn mục IV"},
+      {q:"Number of pairs of parallel faces in a cuboid:",opts:["2","3","4","6"],ans:1,topic:"SOLID",exp:"3 cặp mặt song song.",review:"Ôn mục V — Hình hộp"},
+      {q:"If line \\(d\\) and plane \\((P)\\) have no common point, they are:",opts:["Parallel","Perpendicular","Identical","Skew"],ans:0,topic:"PARA_LINE_PLANE",exp:"Định nghĩa đường song song mặt phẳng.",review:"Ôn mục II"}
+    ]
+  },
+  3: {
+    name:"Bộ 3 — Advanced",
+    desc:"Bài toán tổng hợp: Thales đảo, đường trung bình trong tứ diện, phép chiếu, thiết diện song song, bài toán tỉ lệ và ứng dụng.",
+    questions:[
+      {q:"In a cube ABCD.A'B'C'D' (edge a). Plane through BD parallel to A'C'. The cross-section is:",opts:["A triangle","A square","A rectangle","A parallelogram"],ans:0,topic:"SOLID",exp:"Mặt phẳng (A'BD) cắt hình lập phương theo tam giác A'BD đều cạnh \\(a\\sqrt{2}\\).",review:"Ôn mục V — Thiết diện"},
+      {q:"Tetrahedron ABCD, M∈AB, N∈AC, P∈AD. If AM/AB = AN/AC = AP/AD = 1/3, then plane (MNP) is:",opts:["⊥ (BCD)","∥ (BCD)","intersects (BCD) in a line","contains (BCD)"],ans:1,topic:"THALES",exp:"Theo Thales đảo trong không gian, (MNP) ∥ (BCD).",review:"Ôn mục III — Thales"},
+      {q:"A plane parallel to base of a square pyramid cuts the pyramid. The cross-section is:",opts:["A triangle","A square (similar to base)","A rectangle","A trapezoid"],ans:1,topic:"SOLID",exp:"Thiết diện song song đáy → hình vuông đồng dạng với đáy.",review:"Ôn mục V — Thiết diện"},
+      {q:"Tetrahedron ABCD, M midpoint AB, N midpoint CD. What is MN?",opts:["Parallel to BC","Skew to all edges","Connects midpoints of two opposite edges","= BC"],ans:2,topic:"SOLID",exp:"MN nối trung điểm 2 cạnh đối diện — là đường trung bình trong tứ diện.",review:"Ôn mục V"},
+      {q:"Parallel planes \\((P)\\parallel(Q)\\). Line \\(d\\) intersects \\((P)\\) at \\(A\\), and intersects \\((Q)\\) at \\(B\\). If another parallel line \\(d'\\) intersects at \\(A',B'\\), then \\(AA'/BB' =\\)",opts:["1","2","Depends on d","0"],ans:0,topic:"THALES",exp:"\\(AA' = BB'\\) vì \\(AA'\\parallel BB'\\) và \\(AB\\parallel A'B'\\) — hình bình hành.",review:"Ôn mục III — Thales"},
+      {q:"Cube ABCD.A'B'C'D'. The planes (ABCD) and (AB'C'D) intersect in the line:",opts:["AC","BD","AB","AD"],ans:2,topic:"SOLID",exp:"Giao tuyến của 2 mặt phẳng chứa AB.",review:"Ôn mục V"},
+      {q:"If \\((P)\\parallel(Q)\\), then for any line \\(d\\perp(P)\\):",opts:["\\(d\\parallel(Q)\\)","\\(d\\perp(Q)\\)","\\(d\\subset(Q)\\)","Not determined"],ans:1,topic:"PARA_PLANES",exp:"\\(d\\perp(Q)\\).",review:"Ôn mục III"},
+      {q:"Tetrahedron ABCD. Plane \\((P)\\parallel(BCD)\\) cuts AB, AC, AD at M, N, P. Ratio AM/MB = 1/2. Then MN/BC =",opts:["1/2","1/3","2/3","1"],ans:1,topic:"THALES",exp:"AM/AB = 1/3, MN/BC = 1/3.",review:"Ôn mục III — Thales"},
+      {q:"Distance between parallel planes \\(2x-y+2z=1\\) and \\(2x-y+2z=10\\):",opts:["3","4","5","9"],ans:0,topic:"PARA_PLANES",exp:"\\(d=|10-1|/\\sqrt{4+1+4}=9/3=3\\).",review:"Ôn mục III"},
+      {q:"Plane \\((P)\\parallel(Q)\\), distance 6. Segment AB with \\(A\\in(P)\\), \\(B\\in(Q)\\), \\(|AB|=10\\). The angle between AB and \\((P)\\) satisfies \\(\\sin\\alpha =\\)",opts:["0","3/5","4/5","1"],ans:1,topic:"PARA_PLANES",exp:"Hình chiếu AB' = \\(\\sqrt{100-36}=8\\). \\(\\sin\\alpha = 6/10 = 3/5\\).",review:"Ôn mục III"},
+      {q:"Given a cube of edge 2. A plane passes through A and is parallel to (BDC') where B, C', D are vertices. This plane cuts the cube in:",opts:["A triangle","A quadrilateral","A hexagon","A point"],ans:0,topic:"SOLID",exp:"Mặt phẳng qua A song song (BDC') — thường cắt hình lập phương theo tam giác.",review:"Ôn mục V"},
+      {q:"In tetrahedron ABCD, M, N, P are midpoints of AD, BD, CD. Then (MNP) ∥",opts:["(ABC)","(ABD)","(BCD)","(ACD)"],ans:0,topic:"THALES",exp:"M, N, P lần lượt là trung điểm của AD, BD, CD → (MNP) ∥ (ABC).",review:"Ôn mục III — Thales"},
+      {q:"Tetrahedron ABCD with M on AB, N on AC. If MN ∥ BC, then:",opts:["AM/MB ≠ AN/NC","AM/MB = AN/NC","AB=AC","MN=BC"],ans:1,topic:"THALES",exp:"Định lý Thales: tỉ số bằng nhau.",review:"Ôn mục III — Thales"},
+      {q:"A plane parallel to (P) is at distance 3. A point on (P) to a point on the parallel plane: minimum distance is:",opts:["0","3","\\(>3\\)","Depends"],ans:1,topic:"PARA_PLANES",exp:"Khoảng cách 2 mặt song song = 3.",review:"Ôn mục III"},
+      {q:"Cube ABCD.A'B'C'D' with edge a. Distance between the two opposite faces (ABCD) and (A'B'C'D') is:",opts:["a","\\(a\\sqrt{2}\\)","\\(a\\sqrt{3}\\)","2a"],ans:0,topic:"SOLID",exp:"= a.",review:"Ôn mục V"},
+      {q:"If three parallel planes intersect a plane (R) in lines a, b, c, then:",opts:["a, b, c are concurrent","a, b, c are parallel","a, b, c form a triangle","a⊥b"],ans:1,topic:"PARA_PLANES",exp:"3 giao tuyến của 3 mặt phẳng song song với 1 mặt phẳng cắt → song song với nhau.",review:"Ôn mục III"},
+      {q:"A cylinder with radius 2, height 5 has volume:",opts:["\\(10\\pi\\)","\\(20\\pi\\)","\\(40\\pi\\)","\\(100\\pi\\)"],ans:1,topic:"SOLID",exp:"\\(\\pi r^2 h = 20\\pi\\).",review:"Ôn mục V"},
+      {q:"A rectangular prism has dimensions 2, 3, 6. Its diagonal is:",opts:["7","8","9","11"],ans:0,topic:"SOLID",exp:"\\(\\sqrt{4+9+36}=7\\).",review:"Ôn mục V"},
+      {q:"If a prism has base area 10 and lateral surface area 60, and lateral edges perpendicular to base, is it a right prism?",opts:["Yes","No","Only if base is square","Cannot determine"],ans:0,topic:"SOLID",exp:"Cạnh bên ⊥ đáy → lăng trụ đứng.",review:"Ôn mục V"},
+      {q:"Distance between two parallel lines in plane \\(z=0\\): \\(y=2\\) and \\(y=7\\).",opts:["2","3","5","7"],ans:2,topic:"PARA_LINES",exp:"\\(|7-2| = 5\\).",review:"Ôn mục I"},
+      {q:"Given cube ABCD.A'B'C'D' with edge 4, cut by a plane parallel to base at height 2. The cross-section is a square of side:",opts:["2","3","4","8"],ans:2,topic:"SOLID",exp:"Side = 4 (giữ nguyên vì song song mặt đáy).",review:"Ôn mục V"},
+      {q:"Tetrahedron ABCD. Point M on AD such that AM/MD = 2. Plane through M parallel to (ABC) cuts BD at N. Then BN/ND =",opts:["1","2","1/2","3"],ans:1,topic:"THALES",exp:"BN/ND = AM/MD = 2.",review:"Ôn mục III — Thales"},
+      {q:"If \\((P)\\parallel(Q)\\parallel(R)\\) and \\(d\\) intersects them at A, B, C with AB = 3, BC = 5. Another line d' intersects them at A', B', C'. Then A'B'/B'C' =",opts:["3/5","5/3","1","9/25"],ans:0,topic:"THALES",exp:"Thales: A'B'/B'C' = AB/BC = 3/5.",review:"Ôn mục III"},
+      {q:"Volume of a rectangular parallelepiped with dimensions 2, 3, 4:",opts:["9","12","24","48"],ans:2,topic:"SOLID",exp:"\\(V = 24\\).",review:"Ôn mục V"},
+      {q:"A line \\(d\\parallel(P)\\), \\(A\\in(P)\\), \\(B\\in d\\). If \\(d(A,d) = 3\\) then all points on \\(d\\) are at distance:",opts:["Exactly 3 from (P)","Variable from (P)","0 from (P)","Cannot determine"],ans:0,topic:"PARA_LINE_PLANE",exp:"\\(d\\parallel(P)\\) → mọi điểm trên d cách (P) một khoảng bằng nhau.",review:"Ôn mục II"},
+      {q:"In a cube ABCD.A'B'C'D', which pair of planes is parallel?",opts:["(ABCD) và (AA'B'B)","(ABCD) và (A'B'C'D')","(AA'B'B) và (BB'C'C)","(ABCD) và (ABC'D')"],ans:1,topic:"SOLID",exp:"(ABCD) và (A'B'C'D') là 2 mặt đáy — song song.",review:"Ôn mục V"},
+      {q:"A cube with edge a, distance between 2 parallel edges (not on same face) is:",opts:["a","\\(a\\sqrt{2}\\)","\\(a\\sqrt{3}\\)","a/2"],ans:0,topic:"SOLID",exp:"Ví dụ AB và C'D' cách nhau = a.",review:"Ôn mục V"},
+      {q:"If \\(d_1\\parallel d_2\\), then any plane containing \\(d_1\\) and parallel to \\(d_2\\) is:",opts:["Parallel to \\(d_2\\)","Contains d2","Perpendicular to d2","Skew to d2"],ans:0,topic:"PARA_LINES",exp:"Mặt phẳng chứa d1 và song song d2 → song song d2.",review:"Ôn mục I"},
+      {q:"A line perpendicular to two parallel planes is:",opts:["Parallel to both","Perpendicular to both","Parallel to one, ⊥ the other","Not determined"],ans:1,topic:"PARA_PLANES",exp:"⊥ cả 2 mặt.",review:"Ôn mục III"},
+      {q:"Volume of a cube with total surface area 96:",opts:["16","32","48","64"],ans:3,topic:"SOLID",exp:"\\(6a^2=96 \\Rightarrow a=4\\), \\(V=64\\).",review:"Ôn mục V"}
+    ]
+  }
+};
+
+/* ============ TEST STATE ============ */
+const TEST_DURATION = 45*60;
+let testState = null;
+let testTimerInterval = null;
+
+function renderSatSetSelector(){
+  const c = document.getElementById('satSetSelector');
+  c.innerHTML = '';
+  Object.keys(SAT_SETS).forEach(k=>{
+    const s = SAT_SETS[k];
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.onclick = () => startSetTest(parseInt(k));
+    card.innerHTML = '<div class="set-badge">BỘ '+k+'</div><h4>'+s.name+'</h4><p>'+s.desc+'</p><div class="set-meta"><span><strong>30</strong> câu</span><span><strong>45:00</strong> phút</span><span><strong>A–D</strong></span></div><div class="set-start">▶ Bắt đầu làm bài →</div>';
+    c.appendChild(card);
+  });
+}
+
+function startSetTest(setNum){
+  testState = { setNum:setNum, current:0, answers:new Array(30).fill(null), timeLeft:TEST_DURATION, submitted:false };
+  switchTab('sat');
+  showScreen('test');
+  document.getElementById('testSetName').textContent = SAT_SETS[setNum].name;
+  renderNavGrid();
+  renderTestQuestion();
+  startTestTimer();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function startTestTimer(){
+  if(testTimerInterval) clearInterval(testTimerInterval);
+  updateTimerDisplay();
+  testTimerInterval = setInterval(()=>{
+    if(!testState || testState.submitted) return;
+    testState.timeLeft--;
+    updateTimerDisplay();
+    if(testState.timeLeft <= 0){ clearInterval(testTimerInterval); testTimerInterval = null; submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  if(!testState) return;
+  const el = document.getElementById('testTimer');
+  const t = Math.max(0, testState.timeLeft);
+  const m = String(Math.floor(t/60)).padStart(2,'0');
+  const s = String(t%60).padStart(2,'0');
+  el.textContent = m+':'+s;
+  el.classList.remove('warning','danger');
+  if(t <= 60) el.classList.add('danger');
+  else if(t <= 300) el.classList.add('warning');
+}
+
+function renderNavGrid(){
+  const grid = document.getElementById('navGrid');
+  grid.innerHTML = '';
+  for(let i=0;i<30;i++){
+    const b = document.createElement('button');
+    b.className = 'nav-cell';
+    b.textContent = i+1;
+    b.onclick = () => { testState.current = i; renderTestQuestion(); renderNavGrid(); };
+    grid.appendChild(b);
+  }
+  updateNavStatus();
+}
+
+function updateNavStatus(){
+  if(!testState) return;
+  const cells = document.querySelectorAll('#navGrid .nav-cell');
+  cells.forEach((c,i)=>{
+    c.classList.toggle('answered', testState.answers[i] !== null);
+    c.classList.toggle('current', i === testState.current);
+  });
+  const answered = testState.answers.filter(a=>a!==null).length;
+  document.getElementById('testProgress').textContent = 'Câu '+(testState.current+1)+' / 30 · Đã trả lời '+answered+'/30';
+}
+
+function renderTestQuestion(){
+  const item = SAT_SETS[testState.setNum].questions[testState.current];
+  document.getElementById('testQNum').textContent = testState.current+1;
+  document.getElementById('testQText').innerHTML = item.q;
+  const optsC = document.getElementById('testOptions');
+  optsC.innerHTML = '';
+  item.opts.forEach((o,i)=>{
+    const b = document.createElement('button');
+    b.className = 'option';
+    if(testState.answers[testState.current] === i) b.classList.add('selected');
+    b.innerHTML = '<span class="letter">'+letterMap[i]+'</span><span class="opt-text">'+o+'</span>';
+    b.onclick = () => selectTestOption(i);
+    optsC.appendChild(b);
+  });
+  document.getElementById('testQuestionCard').classList.remove('correct','wrong');
+  document.getElementById('btnPrev').disabled = testState.current === 0;
+  document.getElementById('btnNext').textContent = testState.current === 29 ? '📝 Nộp bài' : 'Câu tiếp →';
+  if(window.renderMathInElement) renderMathInElement(document.getElementById('testQuestionCard'),{delimiters:[{left:'\\(',right:'\\)',display:false}]});
+  updateNavStatus();
+}
+
+function selectTestOption(optIdx){
+  if(testState.submitted) return;
+  testState.answers[testState.current] = optIdx;
+  document.querySelectorAll('#testOptions .option').forEach((o,i)=>o.classList.toggle('selected', i === optIdx));
+  updateNavStatus();
+}
+
+function goToQuestion(i){ if(i<0 || i>29) return; testState.current = i; renderTestQuestion(); }
+
+document.getElementById('btnPrev').onclick = () => goToQuestion(testState.current-1);
+document.getElementById('btnNext').onclick = () => { if(testState.current === 29) submitTest(false); else goToQuestion(testState.current+1); };
+document.getElementById('btnQuitTest').onclick = () => {
+  if(confirm('Bạn có chắc muốn thoát? Bài làm sẽ không được lưu.')){
+    if(testTimerInterval) clearInterval(testTimerInterval);
+    testTimerInterval = null; testState = null;
+    document.getElementById('satResultScreen').innerHTML = '';
+    showScreen('selector');
+  }
+};
+document.getElementById('btnSubmitTest').onclick = () => submitTest(false);
+
+function submitTest(auto){
+  if(!testState || testState.submitted) return;
+  if(!auto){
+    const unanswered = testState.answers.filter(a=>a===null).length;
+    if(unanswered > 0){
+      if(!confirm('Bạn còn '+unanswered+' câu chưa trả lời. Vẫn nộp bài?')) return;
+    } else {
+      if(!confirm('Nộp bài và xem kết quả?')) return;
+    }
+  }
+  testState.submitted = true;
+  if(testTimerInterval){ clearInterval(testTimerInterval); testTimerInterval = null; }
+  document.getElementById('satTestScreen').style.display = 'none';
+  try { renderResult(); } catch(e){ console.error(e); }
+  showScreen('result');
+  playFanfare();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderResult(){
+  const c = document.getElementById('satResultScreen');
+  c.style.display = 'block';
+
+  const setNum = testState.setNum;
+  const questions = SAT_SETS[setNum].questions;
+  let correct = 0, wrong = 0, unanswered = 0;
+  const topicStat = {};
+  Object.keys(TOPICS).forEach(k=>topicStat[k]={correct:0,total:0});
+  const wrongList = [];
+
+  questions.forEach((item,i)=>{
+    const ans = testState.answers[i];
+    topicStat[item.topic].total++;
+    if(ans === null){ unanswered++; wrongList.push({idx:i,item,yourAns:null}); }
+    else if(ans === item.ans){ correct++; topicStat[item.topic].correct++; }
+    else { wrong++; wrongList.push({idx:i,item,yourAns:ans}); }
+  });
+
+  const total = questions.length;
+  const pct = Math.round(correct/total*100);
+  const estimatedSAT = Math.min(800, Math.max(200, Math.round(200 + (correct/total)*600)));
+  const timeUsed = TEST_DURATION - testState.timeLeft;
+  const tm = String(Math.floor(timeUsed/60)).padStart(2,'0');
+  const ts = String(timeUsed%60).padStart(2,'0');
+  const answered = correct + wrong;
+  const avgTime = answered > 0 ? Math.round(timeUsed/answered) : 0;
+  const avgTimeStr = Math.floor(avgTime/60)+':'+String(avgTime%60).padStart(2,'0');
+
+  let level, levelColor, levelIcon, levelDesc, levelAdvice;
+  if(pct >= 90){ level="XUẤT SẮC"; levelColor="#4CAF50"; levelIcon="🏆"; levelDesc="Kiến thức song song không gian rất vững vàng!"; levelAdvice="Duy trì phong độ, luyện đề khó hơn."; }
+  else if(pct >= 75){ level="TỐT"; levelColor="#2C5AA0"; levelIcon="⭐"; levelDesc="Nắm tốt kiến thức cơ bản và nâng cao."; levelAdvice="Khắc phục chủ đề dưới 80% để đạt 700+."; }
+  else if(pct >= 60){ level="KHÁ"; levelColor="#E8A317"; levelIcon="📈"; levelDesc="Nền tảng khá nhưng còn sai sót."; levelAdvice="Luyện thêm dạng Thales và thiết diện."; }
+  else if(pct >= 40){ level="TRUNG BÌNH"; levelColor="#FF9800"; levelIcon="📚"; levelDesc="Cần củng cố lý thuyết."; levelAdvice="Ôn kỹ mục I, II, III và làm lại Nhóm 1."; }
+  else { level="CẦN CỐ GẮNG"; levelColor="#E53935"; levelIcon="🔧"; levelDesc="Cần xây dựng lại nền tảng."; levelAdvice="Đọc kỹ Kiến thức, ghi nhớ các định lý song song."; }
+
+  let timeEval, timeIcon, timeColor;
+  if(timeUsed <= TEST_DURATION*0.7){ timeEval="Quản lý thời gian xuất sắc"; timeIcon="🚀"; timeColor="#4CAF50"; }
+  else if(timeUsed <= TEST_DURATION*0.9){ timeEval="Quản lý thời gian tốt"; timeIcon="⏱️"; timeColor="#2C5AA0"; }
+  else if(timeUsed < TEST_DURATION){ timeEval="Sát giờ — cần tăng tốc"; timeIcon="⏰"; timeColor="#E8A317"; }
+  else { timeEval="Hết giờ"; timeIcon="🚨"; timeColor="#E53935"; }
+
+  const topicList = Object.keys(topicStat).filter(k=>topicStat[k].total>0).map(k=>({key:k,name:TOPICS[k],correct:topicStat[k].correct,total:topicStat[k].total,pct:Math.round(topicStat[k].correct/topicStat[k].total*100)})).sort((a,b)=>a.pct-b.pct);
+  const weakTopics = topicList.filter(t=>t.pct<60);
+  const mediumTopics = topicList.filter(t=>t.pct>=60&&t.pct<80);
+  const strongTopics = topicList.filter(t=>t.pct>=80);
+
+  const roadmapPhases = [];
+  if(weakTopics.length>0){
+    roadmapPhases.push({phase:1,title:"Củng cố kiến thức nền tảng",time:"1–3 ngày",items:weakTopics.map(t=>'<strong>'+t.name+'</strong> ('+t.correct+'/'+t.total+' = '+t.pct+'%) — '+TOPIC_RECOMMENDATIONS[t.key]),actions:[{text:"📖 Ôn lý thuyết",tab:"knowledge"},{text:"✏️ Luyện nhóm cơ bản",tab:"practice"}]});
+  }
+  if(mediumTopics.length>0){
+    roadmapPhases.push({phase:2,title:"Luyện tập nâng cao",time:"3–5 ngày",items:mediumTopics.map(t=>'<strong>'+t.name+'</strong> ('+t.correct+'/'+t.total+' = '+t.pct+'%) — Cần thêm bài tập trung bình–khó.'),actions:[{text:"✏️ Luyện nhóm trung bình",tab:"practice"},{text:"🔄 Làm lại bộ đề này",action:"restart"}]});
+  }
+  roadmapPhases.push({phase:3,title:strongTopics.length>0?"Duy trì & mở rộng":"Luyện đề tổng hợp",time:"Liên tục",items:strongTopics.length>0?strongTopics.map(t=>'<strong>'+t.name+'</strong> ('+t.correct+'/'+t.total+' = '+t.pct+'%) — Duy trì phong độ.'):["Luyện các bộ đề khác để đa dạng dạng bài."],actions:[{text:"📚 Chọn bộ khác",action:"back"},{text:"⏱️ Luyện đề khác",tab:"sat"}]});
+
+  const wrongByTopic = {};
+  wrongList.forEach(w=>{ if(!wrongByTopic[w.item.topic]) wrongByTopic[w.item.topic]=[]; wrongByTopic[w.item.topic].push(w); });
+  const priorityTopics = Object.entries(wrongByTopic).map(([key,list])=>({key,name:TOPICS[key],count:list.length,questionNums:list.map(x=>x.idx+1)})).sort((a,b)=>b.count-a.count);
+
+  c.innerHTML = 
+    '<div class="result-hero"><div><h2>🎉 Hoàn thành '+SAT_SETS[setNum].name+'!</h2><p>Bạn đã làm '+total+' câu trong '+tm+':'+ts+'. '+(unanswered>0?'Còn '+unanswered+' câu chưa trả lời.':'')+'</p></div><div class="result-score"><div class="num">'+correct+'</div><div class="den">/ '+total+' câu đúng</div><div class="pct">'+pct+'%</div></div></div>' +
+    '<div class="level-banner" style="border-left-color:'+levelColor+'"><div class="level-icon" style="background:'+levelColor+'">'+levelIcon+'</div><div class="level-content"><h3 style="color:'+levelColor+'">Đánh giá: '+level+'</h3><p>'+levelDesc+'</p><div class="level-advice"><strong>💡 Định hướng:</strong> '+levelAdvice+'</div></div></div>' +
+    '<div class="result-stats"><div class="stat-box green"><div class="label">✅ Đúng</div><div class="value">'+correct+'</div><div class="sub">Chiếm '+pct+'%</div></div><div class="stat-box red"><div class="label">❌ Sai</div><div class="value">'+wrong+'</div><div class="sub">Cần xem lại</div></div><div class="stat-box yellow"><div class="label">⚠ Bỏ trống</div><div class="value">'+unanswered+'</div><div class="sub">Chưa trả lời</div></div><div class="stat-box"><div class="label">🎯 SAT ước lượng</div><div class="value">'+estimatedSAT+'</div><div class="sub">/ 800</div></div></div>' +
+    '<div class="result-section-title"><span class="icon">⏱</span> Phân tích thời gian</div><div class="time-analysis"><div class="time-block"><div class="tb-icon">⏰</div><div class="tb-content"><div class="tb-label">Tổng thời gian</div><div class="tb-value">'+tm+':'+ts+'</div><div class="tb-desc">/ 45:00</div></div></div><div class="time-block"><div class="tb-icon">⚡</div><div class="tb-content"><div class="tb-label">Trung bình / câu</div><div class="tb-value">'+avgTimeStr+'</div><div class="tb-desc">Mục tiêu: ≤ 1:30</div></div></div><div class="time-block"><div class="tb-icon" style="background:'+timeColor+'22;color:'+timeColor+'">'+timeIcon+'</div><div class="tb-content"><div class="tb-label">Đánh giá</div><div class="tb-value" style="color:'+timeColor+';font-size:15px">'+timeEval+'</div><div class="tb-desc">'+(timeUsed<TEST_DURATION?'Còn dư '+Math.floor((TEST_DURATION-timeUsed)/60)+':'+String((TEST_DURATION-timeUsed)%60).padStart(2,'0'):'Đã dùng hết')+'</div></div></div></div>' +
+    '<div class="result-section-title"><span class="icon">📊</span> Phân tích theo chủ đề</div><table class="topic-table"><thead><tr><th style="width:28%">Chủ đề</th><th style="width:38%">Tỉ lệ đúng</th><th style="width:14%;text-align:right">Số câu</th><th style="width:20%;text-align:center">Trạng thái</th></tr></thead><tbody>' +
+    topicList.map(t=>{
+      let cls='',status='',statusColor='';
+      if(t.pct>=80){status='✅ Vững';statusColor='#4CAF50';}
+      else if(t.pct>=60){cls='warn';status='⚠ Cần luyện';statusColor='#E8A317';}
+      else {cls='bad';status='🔴 Yếu';statusColor='#E53935';}
+      return '<tr><td><strong>'+t.name+'</strong></td><td><div class="topic-bar-cell"><div class="topic-bar"><div class="topic-bar-fill '+cls+'" style="width:'+t.pct+'%"></div></div><span style="min-width:44px;font-weight:700;color:var(--sat-gray)">'+t.pct+'%</span></div></td><td style="text-align:right"><span class="topic-score">'+t.correct+'/'+t.total+'</span></td><td style="text-align:center"><strong style="color:'+statusColor+';font-size:13px">'+status+'</strong></td></tr><tr><td colspan="4" style="padding:0 16px 12px;border-bottom:1px solid #eef2f8"><div class="topic-recommend">📌 <strong>Gợi ý:</strong> '+TOPIC_RECOMMENDATIONS[t.key]+'</div></td></tr>';
+    }).join('') +
+    '</tbody></table>' +
+    '<div class="roadmap"><h3>🗺️ Lộ trình ôn tập cá nhân hóa</h3><p class="roadmap-sub">Dựa trên kết quả của em, đây là lộ trình được thiết kế riêng:</p>' +
+    roadmapPhases.map(p=>'<div class="roadmap-phase phase-'+p.phase+'"><div class="phase-num">'+p.phase+'</div><div class="phase-content"><h4>Giai đoạn '+p.phase+': '+p.title+' <span class="phase-time">⏳ '+p.time+'</span></h4><ul>'+p.items.map(it=>'<li>'+it+'</li>').join('')+'</ul><div class="phase-actions">'+p.actions.map(a=>{
+      if(a.action==='restart') return '<button class="btn btn-primary btn-sm" onclick="restartSameSet()">'+a.text+'</button>';
+      if(a.action==='back') return '<button class="btn btn-outline btn-sm" onclick="backToSetSelector()">'+a.text+'</button>';
+      return '<button class="btn btn-outline btn-sm" onclick="switchTab(\''+a.tab+'\')">'+a.text+'</button>';
+    }).join('')+'</div></div></div>').join('') +
+    '</div>' +
+    (wrongList.length>0 ? '<div class="result-section-title"><span class="icon" style="background:#fdeaea;color:var(--sat-red)">🔍</span> Phân tích '+wrongList.length+' câu sai / bỏ trống</div>' +
+      wrongList.map(w=>{
+        const item=w.item;
+        const cls=w.yourAns===null?'unanswered':'';
+        const yourText=w.yourAns===null?'— Không trả lời —':item.opts[w.yourAns];
+        return '<div class="wrong-item '+cls+'"><div class="wrong-head"><div class="wrong-num">'+(w.idx+1)+'</div><div class="wrong-q">'+item.q+'<div><span class="topic-tag">'+TOPICS[item.topic]+'</span></div></div></div><div class="ans-row"><div class="ans-box your"><div class="lbl">Bạn chọn</div><div class="val">'+(w.yourAns===null?'—':letterMap[w.yourAns]+'. ')+yourText+'</div></div><div class="ans-box correct"><div class="lbl">Đáp án đúng</div><div class="val">'+letterMap[item.ans]+'. '+item.opts[item.ans]+'</div></div></div><div class="exp-box"><div class="lbl">🧮 Lời giải</div>'+item.exp+'</div><div class="review-box">📖 '+item.review+'</div></div>';
+      }).join('')
+      : '<div class="roadmap" style="border-left-color:var(--sat-green)"><h3>🎯 Tất cả câu trả lời đều chính xác!</h3><p style="font-size:14px;color:var(--sat-gray)">Em đã sẵn sàng cho các bộ đề khó hơn!</p></div>') +
+    (priorityTopics.length>0 ? '<div class="result-section-title"><span class="icon" style="background:#fff3cd;color:#b8860b">🎯</span> Định hướng ôn tập ưu tiên</div><div class="priority-plan"><div class="priority-intro"><strong>📋 Dựa trên '+wrongList.length+' câu sai/bỏ trống,</strong> đây là các chủ đề cần ưu tiên ôn lại:</div>' +
+      priorityTopics.map((pt,idx)=>{
+        let priorityLevel='low',priorityLabel='🟢 Cần xem lại';
+        if(pt.count>=3){priorityLevel='high';priorityLabel='🔴 Ưu tiên cao';}
+        else if(pt.count===2){priorityLevel='medium';priorityLabel='🟡 Ưu tiên trung bình';}
+        const steps=PRIORITY_STEPS[pt.key]||[];
+        return '<div class="priority-card '+priorityLevel+'"><div class="priority-header"><div class="priority-rank">'+(idx+1)+'</div><div class="priority-info"><div class="priority-name">'+pt.name+'</div><div class="priority-meta">'+pt.count+' câu sai · Câu '+pt.questionNums.join(', ')+'</div></div><div class="priority-badge">'+priorityLabel+'</div></div><div class="priority-recommend">📌 <strong>Trọng tâm ôn:</strong> '+TOPIC_RECOMMENDATIONS[pt.key]+'</div><div style="font-size:14px;font-weight:700;color:var(--sat-blue);margin-bottom:6px">📝 Các bước ôn cụ thể:</div><ol class="priority-steps">'+steps.map(s=>'<li>'+s+'</li>').join('')+'</ol><div class="priority-actions"><button class="btn btn-outline btn-sm" onclick="switchTab(\'knowledge\')">📖 Xem lý thuyết</button><button class="btn btn-outline btn-sm" onclick="switchTab(\'practice\')">✏️ Luyện nhóm phù hợp</button><button class="btn btn-primary btn-sm" onclick="restartSameSet()">🔄 Luyện lại</button></div></div>';
+      }).join('') +
+      '</div>' : '') +
+    '<div class="result-actions"><button class="btn btn-primary" onclick="restartSameSet()">🔄 Làm lại '+SAT_SETS[setNum].name+'</button><button class="btn btn-outline" onclick="backToSetSelector()">📚 Chọn bộ khác</button><button class="btn btn-outline" onclick="switchTab(\'knowledge\')">📖 Ôn lại lý thuyết</button><button class="btn btn-outline" onclick="switchTab(\'practice\')">✏️ Luyện tập thêm</button></div>';
+
+  if(window.renderMathInElement) renderMathInElement(c,{delimiters:[{left:'\\(',right:'\\)',display:false}]});
+}
+
+function restartSameSet(){
+  if(!testState) return;
+  const setNum = testState.setNum;
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  startSetTest(setNum);
+}
+
+function backToSetSelector(){
+  document.getElementById('satResultScreen').style.display = 'none';
+  document.getElementById('satResultScreen').innerHTML = '';
+  document.getElementById('satTestScreen').style.display = 'none';
+  showScreen('selector');
+  testState = null;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+renderSatSetSelector();
+
+window.addEventListener('load',()=>{
+  if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}]});
+});
+</script>
+</body>
+</html>
